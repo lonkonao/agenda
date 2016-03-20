@@ -4,7 +4,7 @@
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Mantenedor- Usuario</title>
+        <title>Mantenedor-Funcionario</title>
         <!-- Tell the browser to be responsive to screen width -->
         <script type='text/javascript' src='../../js/jquery-1.7.1.min.js'></script>
         <link rel="stylesheet" href="../../css/cargador.css">
@@ -33,15 +33,12 @@
         <!-- bootstrap wysihtml5 - text editor -->
         <link rel="stylesheet" href="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
-
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-
-
 
 
     </head>
@@ -85,14 +82,31 @@
 
                         <li class="treeview">
                             <a href="#">
+                                <i class="fa fa-search"></i> <span>Buscador</span> <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href='anexoBus.php'><i class='fa fa-phone'></i>Anexo</a></li> 
+                                <li><a href='funcionarioBus.php'><i class='fa fa-user'></i>Funcionario</a></li> 
+                            </ul>
+                        </li>
+
+                        <li class="active treeview">
+                            <a href="#">
                                 <i class="fa fa-gears"></i> <span>Mantenedor</span> <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href='mantenedor.php'><i class='fa fa-gears'></i>General</a></li> 
-                                <li><a href='funcionario.php'><i class='fa fa-stethoscope'></i>Funcionario</a></li> 
-                                <li><a href='#'><i class='fa fa-desktop'></i>Equipo</a></li>
 
+                                <?php
+                                if ($e == 1) {
+                                    echo"<li><a href = 'mantenedor.php'><i class = 'fa fa-gears'></i>General</a></li>";
+                                    echo"<li><a href = '#'><i class = 'fa fa-stethoscope'></i>Funcionario</a></li>";
+                                    echo"<li><a href = 'equipo.php'><i class = 'fa fa-desktop '></i>Equipo</a></li>";
+                                } elseif ($e == 0) {
 
+                                    echo" <li><a href='../usuario/anexo.php'><i class='fa fa-phone'></i>Anexo</a></li> ";
+                                    echo"<li><a href='../usuario/funcionario.php'><i class='fa fa-user'></i>Funcionario</a></li> ";
+                                }
+                                ?>
                             </ul>
                         </li>
 
@@ -122,74 +136,109 @@
                         <div class="col-md-10">
                             <div class="box box-warning ">
                                 <div class="box-header with-border">
-                                    <h3 class="box-title">Funcionario</h3>
+                                    <h3 class="box-title">Usuarios</h3>
 
                                 </div><!-- /.box-header -->
                                 <div class="box-body">
                                     <div class="col-xs-4" style="border:1px solid #f4f4f4;">
-                                        <form class = 'form-horizontal'>
-                                            <div class = 'box-body'>
-                                                <div class = 'form-group'>
-
-                                                    <div class="form-group">
-                                                        <label>ID</label>
-                                                        <input name="id" class="form-control" required>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <label>Usuario</label>
-                                                        <input name="usuario" class="form-control" required>
-                                                    </div>
+                                        <!-- form start -->
+                                        <?php
+                                        require_once '../../modelo/Data.php';
+                                        $d = new Data();
+                                        if (isset($_GET['id'])) {
 
 
-
-
-
-                                                    <div class="form-group">
-                                                        <label>Permiso</label>
-
-                                                        <?php $d->comboPermiso() ?>
-
-
-                                                    </div>
-
-
-                                                    <div class="form-group">
-                                                        <label>Estado</label>
-                                                        <?php $d->comboEstado() ?>
-                                                    </div>
-
-
-                                                    <div class="form-group">
-                                                        <label>Permiso Editar</label>
-                                                        <?php $d->comboEditar() ?>
-                                                    </div>
-
-
-                                                    <div class="form-group">
-                                                        <label>Permiso Eliminar</label>
-                                                        <?php $d->comboEliminar() ?>
-                                                    </div>
+                                            echo"   <form class = 'form-horizontal' method = 'POST' action = ''>";
+                                            echo"  <div class = 'box-body'>";
+                                            echo"  <div class = 'form-group'>";
+                                            echo"  <div class = 'col-sm-10'>";
+                                            echo"  <label>Nombre Usuario</label>";
+                                            echo"  <input type = 'text' class = 'form-control' name = 'txtNombre' value='" . $user . "'>";
+                                            echo"  </div>";
+                                            echo"  <div class = 'col-sm-10'>";
+                                            echo"  <label>Permiso Usuario</label>";
+                                            $d->comboPermiso();
+                                            echo"  </div>";
+                                             echo"  <div class = 'col-sm-10'>";
+                                            echo"  <label>Estado Usuario</label>";
+                                            $d->comboEstado();
+                                            echo"  </div>";
+                                             echo"  <div class = 'col-sm-10'>";
+                                            echo"  <label>Estado Usuario</label>";
+                                            $d->comboEstado();
+                                            echo"  </div>";
+                                             echo"  <div class = 'col-sm-10'>";
+                                            echo"  <label>Permiso Editar</label>";
+                                            $d->comboEditar();
+                                            echo"  </div>";
+                                             echo"  <div class = 'col-sm-10'>";
+                                            echo"  <label>Permiso Eliminar</label>";
+                                            $d->comboEliminar();
+                                            echo"  </div>";
+                                            
 
 
 
 
-                                                </div>
-                                            </div>
-                                        </form>
+
+
+                                            $d->comboEstamentoF($estamento);
+
+                                            echo" </div>";
+                                            echo"  </div>";
+
+                                            echo" </div><!--/.box-body -->";
+                                            echo" <div class = 'box-footer'>";
+                                            echo"     <button type = 'submit' class = 'btn btn-info pull-right'>Guardar</button>";
+                                            echo" </div>";
+                                            echo" </form";
+                                        } else {
+                                            echo"   <form class = 'form-horizontal' method = 'POST' action = '../../controlador/ControFuncionario.php'>";
+                                            echo"  <div class = 'box-body'>";
+                                            echo"  <div class = 'form-group'>";
+                                            echo"  <div class = 'col-sm-10'>";
+                                            echo"  <label>Nombre Funcionario</label>";
+                                            echo"  <input type = 'text' class = 'form-control' name = 'txtNombre' placeholder = 'Nombre'>";
+                                            echo"  </div>";
+                                            echo"  <div class = 'col-sm-10'>";
+                                            echo"  <label>Apellido Funcionario</label>";
+                                            echo"  <input type = 'text' class = 'form-control' name = 'txtApellido' placeholder = 'Apellido'>";
+                                            echo"  </div>";
+                                            echo"  <div class = 'col-sm-10'>";
+                                            echo"  <label>Correo Electronico</label>";
+                                            echo"  <input type = 'email' class = 'form-control' name = 'txtMail' placeholder = 'Correo'>";
+                                            echo"  </div>";
+                                            echo"  <div class = 'col-sm-10'>";
+                                            echo"  <label>Estamento</label >";
+                                            require '../../modelo/Data.php';
+                                            $d = new Data();
+
+                                            $d->comboEstamento();
+
+                                            echo" </div>";
+                                            echo"  </div>";
+
+                                            echo" </div><!--/.box-body -->";
+                                            echo" <div class = 'box-footer'>";
+                                            echo"     <button type = 'submit' class = 'btn btn-info pull-right'>Guardar</button>";
+                                            echo" </div>";
+                                            echo" </form";
+                                        }
+                                        echo" </div>";
+                                        ?>
                                     </div>
                                     <div class = "col-xs-6">
                                         <?php
                                         require_once '../../modelo/Data.php';
                                         $d = new Data();
-                                        $d->dataTablesUser();
+                                        $d->listaFuncionario();
                                         ?>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -271,20 +320,5 @@
         <script src="../../dist/js/pages/dashboard.js"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="../../dist/js/demo.js"></script>
-
-        <script src="../../js/bootstrap-switch.js"></script>
-        <script>
-
-            $("[name='checkbox1'],[name='checkbox2'], [name='checkbox10']").bootstrapSwitch({
-                size: 'xs',
-                on: 'Si',
-                off: 'No'
-            });
-
-
-        </script>
-
-
-
     </body>
 </html>
