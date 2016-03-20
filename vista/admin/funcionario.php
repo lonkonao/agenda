@@ -233,8 +233,7 @@ if ($p == 0) {
                                     </div>
                                     <div class = "col-xs-6">
                                         <?php
-                                        require_once '../../modelo/Data.php';
-                                        $d = new Data();
+                                       
                                         $d->listaFuncionario();
                                         ?>
                                     </div>
