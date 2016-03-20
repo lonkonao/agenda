@@ -92,7 +92,7 @@ if ($p == 0) {
                     <ul class="sidebar-menu">
                         <li class="header">Menu Navegación</li>
                         <li class="active treeview">
-                        <li><a href="portal.php"><i class="fa fa-home"></i><span>Inicio</span></a></li>
+                        <li><a href="../portal.php"><i class="fa fa-home"></i><span>Inicio</span></a></li>
 
 
                         <li class="treeview">
