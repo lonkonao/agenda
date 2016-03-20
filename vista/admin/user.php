@@ -130,37 +130,46 @@
                                         <form class = 'form-horizontal'>
                                             <div class = 'box-body'>
                                                 <div class = 'form-group'>
-                                                    
-                                                    <div class = 'col-sm-10'>
-                                                        <label>Nombre Usuario</label>
-                                                        <input>
+
+                                                    <div class="form-group">
+                                                        <label>ID</label>
+                                                        <input name="id" class="form-control" required>
                                                     </div>
 
-                                                    <div class = 'col-sm-10'>
-                                                        <label>Contraseña</label>
-                                                        <input>
+                                                    <div class="form-group">
+                                                        <label>Usuario</label>
+                                                        <input name="usuario" class="form-control" required>
                                                     </div>
 
-                                                    <div class = 'col-sm-10'>
+
+
+
+
+                                                    <div class="form-group">
                                                         <label>Permiso</label>
-                                                        <input>
+
+                                                        <?php $d->comboPermiso() ?>
+
+
                                                     </div>
 
-                                                    <div class = 'col-sm-10'>
+
+                                                    <div class="form-group">
                                                         <label>Estado</label>
-                                                        <input>
+                                                        <?php $d->comboEstado() ?>
                                                     </div>
 
-                                                    <div class = 'col-sm-10'>
-                                                        <label>Editar</label>
-                                                        <input>
+
+                                                    <div class="form-group">
+                                                        <label>Permiso Editar</label>
+                                                        <?php $d->comboEditar() ?>
                                                     </div>
 
-                                                    <div class = 'col-sm-10'>
-                                                        <label>Eliminar</label>
-                                                        <input>
-                                                    </div>
 
+                                                    <div class="form-group">
+                                                        <label>Permiso Eliminar</label>
+                                                        <?php $d->comboEliminar() ?>
+                                                    </div>
 
 
 
