@@ -142,6 +142,7 @@
                                 <div class="box-body">
                                     <div class="col-xs-4" style="border:1px solid #f4f4f4;">
                                         <!-- form start -->
+                                       
                                         <?php
                                         require_once '../../modelo/Data.php';
                                             $d = new Data();
@@ -194,12 +195,16 @@
                                             echo" </form";
                                         } else {
                                            
-                                             echo"   <form class = 'form-horizontal' method = 'POST' action = ''>";
+                                             echo"   <form class = 'form-horizontal' method = 'POST' action = '../../controlador/ControUsuario.php'>";
                                             echo"  <div class = 'box-body'>";
                                             echo"  <div class = 'form-group'>";
                                             echo"  <div class = 'col-sm-10'>";
                                             echo"  <label>Nombre Usuario</label>";
-                                            echo"  <input type = 'text' class = 'form-control' name = 'txtNombre' value='" . $user . "'>";
+                                            echo"  <input type = 'text' class = 'form-control' name = 'txtNombre'>";
+                                            echo"  </div>";
+                                            echo"  <div class = 'col-sm-10'>";
+                                            echo"  <label>Contraseña</label>";
+                                            echo"  <input type = 'password' class = 'form-control' name = 'txtPass'>";
                                             echo"  </div>";
                                             echo"  <div class = 'col-sm-10'>";
                                             echo"  <label>Permiso Usuario</label>";
