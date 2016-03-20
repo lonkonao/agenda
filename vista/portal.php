@@ -156,20 +156,6 @@ if ($p == 0) {
                         <img src="../imag/logo_big.png" >
                     </center>
 
-                    <?php
-                    echo "a : " . $a;
-                    echo "<br>";
-                    echo "n : " . $n;
-                    echo "<br>";
-                    echo "p : " . $p;
-                    echo "<br>";
-                    echo "es : " . $es;
-                    echo "<br>";
-                    echo "e : " . $e;
-                    echo "<br>";
-                    echo "el : " . $el;
-                    ?>
-
 
                 </div>
 
