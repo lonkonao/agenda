@@ -1,0 +1,19 @@
+.divFiltros{
+    text-align: right;
+    
+}
+form {
+    width: 420px;
+    font: normal bold 12px Verdana, Arial;
+}
+
+
+form input {
+    display: inline-block;
+    width: 200px;
+    margin-bottom: 14px;
+}
+form select{
+   width: 200px; 
+   margin-bottom: 14px;
+}

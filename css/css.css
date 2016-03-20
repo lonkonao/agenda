@@ -1,0 +1,183 @@
+#botones_Pie{
+    padding-left: 42%;
+}
+.contenedor {
+    width: 730px;
+    margin: 0px 355px;
+    height: 850px;
+    padding-top: 2px;
+}
+.contenedorLo{
+    width: 570px;
+    margin: 0px 28%;
+    height: 850px;
+    padding-top: 2px;
+}
+form {
+    background-color: #fff;
+    cursor: pointer;
+    width: 480px;
+    margin: 0px 40px;
+    text-align: center;
+    font-size: 28px ;
+    line-height: 1.231;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+    padding-top: 8px;
+}
+.contenedorOpLogo {
+    background-color: #fff;
+    cursor: pointer;
+    width: 480px;
+    margin: 0px 40px;
+    text-align: center;
+    font-size: 28px ;
+    line-height: 1.231;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+    height: 210px;
+}
+
+.cabezaForm {
+    background-color: #3E2723;
+    height: 70px;
+    width: 480px;
+    text-align: center;
+    background-color: #3498DB;
+    border-top: 1px solid #70B6E5;
+    border-bottom: 5px solid #2372A7;
+    border-radius: 5px 5px 0 0;
+    margin: 0.2em 0;
+    font-size: 2em;
+    font-weight: 300;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.cabezaFormLO {
+    height: 164px;
+    width: 480px;
+    text-align: center;
+    background-color: white;
+    border-top: white;
+    border-bottom: white;
+    border-radius: 5px 5px 0px 0px;
+    margin: 0.2em 41px;
+    margin-top: 0.2em;
+    margin-right: 41px;
+    margin-bottom: 0.2em;
+    margin-left: 41px;
+    font-size: 2em;
+    font-weight: 300;
+    color: #FFF;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.large {
+    width: 85%;
+    margin: 18px 20px 2px 36px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #bdc3c7;
+    background-color: #FFFFFF;
+    font-size: 25px;
+    color: #34495E;
+}
+.btn {
+    margin-left: 0px;
+    text-align: center;
+    font-size: 24px;
+    text-decoration: none;
+    opacity: 1;
+    color: #ffffff;
+    right: 20px;
+    background-color: #3498DB;
+    padding: 10px 17px;
+    margin-bottom: 7px;
+    border: 2px solid #bdc3c7;
+    border-radius: 7px;
+    box-shadow: inset 0 -0.3em 0 rgba(0, 0, 0, 0.2);
+}
+.menu {
+    background-color: #3E2723;
+    height: 20px;
+    width: 120px;
+    color: white;
+    float: left;
+    font-weight: bold;
+    margin-left: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+.menu:hover {
+    background-color: #FF9800;
+    transition: 0.5s;
+    color: black;
+    width: 200px;
+    cursor: pointer;
+}
+
+.menu2 {
+    background-color: #3498DB;
+    height: 71px;
+    width: 166px;
+    color: #FFF;
+    float: left;
+    font-weight: bold;
+    font-size: 30px;
+    margin-left: 5px;
+    padding: 5px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease 0s;
+}
+.menu2:hover {
+    background-color: #FF9800;
+    transition: 0.5s;
+    color: black;
+    width: 250px;
+    cursor: pointer;
+}
+
+.cabBus{
+/*    padding-left: 10%;
+    padding-top: 1%;*/
+  
+}
+
+.contenedorOpLogo2 {
+background-color: #FFF;
+cursor: pointer;
+width: 896px;
+margin: 0px -108px;
+text-align: center;
+border-radius: 5px 5px 0px 0px;
+box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.65);
+height: 81px;
+}
+
+.forBus{
+/*    float: left;*/
+    background-color: #FFF;
+    cursor: pointer;
+    width: 355px;
+    margin: 0px 40px;
+    text-align: center;
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.65);
+    padding-top: 8px;
+
+}
+.contenedorFor{
+    height: 80px;
+width: 1250px;
+}
