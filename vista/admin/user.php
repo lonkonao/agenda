@@ -146,7 +146,7 @@
                                         require_once '../../modelo/Data.php';
                                             $d = new Data();
                                         if (isset($_GET['id'])) {
-                                            
+                                             
 
                                             echo"   <form class = 'form-horizontal' method = 'POST' action = ''>";
                                             echo"  <div class = 'box-body'>";
@@ -182,7 +182,7 @@
 
 
 
-                                            $d->comboEstamentoF($estamento);
+                                            
 
                                             echo" </div>";
                                             echo"  </div>";
@@ -193,27 +193,35 @@
                                             echo" </div>";
                                             echo" </form";
                                         } else {
-                                            echo"   <form class = 'form-horizontal' method = 'POST' action = '../../controlador/ControFuncionario.php'>";
+                                           
+                                             echo"   <form class = 'form-horizontal' method = 'POST' action = ''>";
                                             echo"  <div class = 'box-body'>";
                                             echo"  <div class = 'form-group'>";
                                             echo"  <div class = 'col-sm-10'>";
-                                            echo"  <label>Nombre Funcionario</label>";
-                                            echo"  <input type = 'text' class = 'form-control' name = 'txtNombre' placeholder = 'Nombre'>";
+                                            echo"  <label>Nombre Usuario</label>";
+                                            echo"  <input type = 'text' class = 'form-control' name = 'txtNombre' value='" . $user . "'>";
                                             echo"  </div>";
                                             echo"  <div class = 'col-sm-10'>";
-                                            echo"  <label>Apellido Funcionario</label>";
-                                            echo"  <input type = 'text' class = 'form-control' name = 'txtApellido' placeholder = 'Apellido'>";
+                                            echo"  <label>Permiso Usuario</label>";
+                                            $d->comboPermiso();
                                             echo"  </div>";
                                             echo"  <div class = 'col-sm-10'>";
-                                            echo"  <label>Correo Electronico</label>";
-                                            echo"  <input type = 'email' class = 'form-control' name = 'txtMail' placeholder = 'Correo'>";
+                                            echo"  <label>Estado Usuario</label>";
+                                            $d->comboEstado();
                                             echo"  </div>";
                                             echo"  <div class = 'col-sm-10'>";
-                                            echo"  <label>Estamento</label >";
-                                            require '../../modelo/Data.php';
-                                            $d = new Data();
+                                            echo"  <label>Estado Usuario</label>";
+                                            $d->comboEstado();
+                                            echo"  </div>";
+                                            echo"  <div class = 'col-sm-10'>";
+                                            echo"  <label>Permiso Editar</label>";
+                                            $d->comboEditar();
+                                            echo"  </div>";
+                                            echo"  <div class = 'col-sm-10'>";
+                                            echo"  <label>Permiso Eliminar</label>";
+                                            $d->comboEliminar();
+                                            echo"  </div>";
 
-                                            $d->comboEstamento();
 
                                             echo" </div>";
                                             echo"  </div>";
