@@ -223,7 +223,7 @@
                                             echo"  </div>";
 
 
-                                            echo" </div>";
+                                          
                                             echo"  </div>";
 
                                             echo" </div><!--/.box-body -->";
