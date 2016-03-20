@@ -854,7 +854,7 @@ class Data {
 
         $res = $this->c->ejecutar($sql);
         echo "<select id = 'permiso' name='permiso' class='form-control'>";
-        while ($resultado = mysql_fetch_array($res)) {
+        while ($resultado = $res->fetch_array()) {
 
             echo "<option value='" . $resultado[0] . "'> " . $resultado[1] . "</option>";
         }
@@ -867,7 +867,7 @@ class Data {
 
         $res = $this->c->ejecutar($sql);
         echo "<select id = 'estado' name='estado' class='form-control'>";
-        while ($resultado = mysql_fetch_array($res)) {
+        while ($resultado = $res->fetch_array()) {
 
             echo "<option value='" . $resultado[0] . "'> " . $resultado[1] . "</option>";
         }
@@ -880,7 +880,7 @@ class Data {
 
         $res = $this->c->ejecutar($sql);
         echo "<select id = 'editar' name='editar' class='form-control'>";
-        while ($resultado = mysql_fetch_array($res)) {
+        while ($resultado = $res->fetch_array()) {
 
             echo "<option value='" . $resultado[0] . "'> " . $resultado[1] . "</option>";
         }
@@ -893,7 +893,7 @@ class Data {
 
         $res = $this->c->ejecutar($sql);
         echo "<select id = 'eliminar' name='eliminar' class='form-control'>";
-        while ($resultado = mysql_fetch_array($res)) {
+        while ($resultado = $res->fetch_array()) {
 
             echo "<option value='" . $resultado[0] . "'> " . $resultado[1] . "</option>";
         }
