@@ -144,9 +144,9 @@
                                         <!-- form start -->
                                         <?php
                                         require_once '../../modelo/Data.php';
-                                        $d = new Data();
+                                            $d = new Data();
                                         if (isset($_GET['id'])) {
-
+                                            
 
                                             echo"   <form class = 'form-horizontal' method = 'POST' action = ''>";
                                             echo"  <div class = 'box-body'>";
@@ -159,23 +159,23 @@
                                             echo"  <label>Permiso Usuario</label>";
                                             $d->comboPermiso();
                                             echo"  </div>";
-                                             echo"  <div class = 'col-sm-10'>";
+                                            echo"  <div class = 'col-sm-10'>";
                                             echo"  <label>Estado Usuario</label>";
                                             $d->comboEstado();
                                             echo"  </div>";
-                                             echo"  <div class = 'col-sm-10'>";
+                                            echo"  <div class = 'col-sm-10'>";
                                             echo"  <label>Estado Usuario</label>";
                                             $d->comboEstado();
                                             echo"  </div>";
-                                             echo"  <div class = 'col-sm-10'>";
+                                            echo"  <div class = 'col-sm-10'>";
                                             echo"  <label>Permiso Editar</label>";
                                             $d->comboEditar();
                                             echo"  </div>";
-                                             echo"  <div class = 'col-sm-10'>";
+                                            echo"  <div class = 'col-sm-10'>";
                                             echo"  <label>Permiso Eliminar</label>";
                                             $d->comboEliminar();
                                             echo"  </div>";
-                                            
+
 
 
 
