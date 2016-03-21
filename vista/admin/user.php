@@ -1,4 +1,19 @@
+<?php
+include_once '../../controlador/bloqueDeSeguridad.php';
+$a = $_SESSION["autenticado"];
+$n = $_SESSION["nombreUser"];
+$p = $_SESSION["permisoUser"];
+$es = $_SESSION["estadoUser"];
+$e = $_SESSION["editUser"];
+$el = $_SESSION["eliUser"];
 
+
+if ($p == 0) {
+    $permisoNombre = "Administrador";
+} else if ($p == 1) {
+    $permisoNombre = "Usuario";
+}
+?>
 <html>
     <head>
 
@@ -201,7 +216,7 @@
                                             
 
 
-                                            echo"   <form class = 'form-horizontal' method = 'POST' action = '../../controlador/ControUsuario.php?id=".$id."'>";
+                                            echo"   <form class = 'form-horizontal' method = 'POST' action = '../../controlador/ControUpUsuario.php?id=".$id."'>";
                                             echo"  <div class = 'box-body'>";
                                             echo"  <div class = 'form-group'>";
                                             echo"  <div class = 'col-sm-10'>";
