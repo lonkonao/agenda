@@ -139,7 +139,7 @@
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                     <h4 class="modal-title">Borrar Usuario</h4>
                                 </div>
-                                <form role="form" action="" name="frmPass" onsubmit="PassUser(id, usuario, pass); return false">
+                                <form role="form" action="" name="frmPass" onsubmit="PassUser(id, usuario, pass1,pass2); return false">
                                     <div class="col-lg-12">
 
 
@@ -155,7 +155,11 @@
 
                                         <div class="form-group">
                                             <label>Contraseña</label>
-                                            <input name="pass" type="password" class="form-control" required>
+                                            <input name="pass1" type="password" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Confirme Contraseña</label>
+                                            <input name="pass2" type="password" class="form-control" required>
                                         </div>
 
 
@@ -232,7 +236,8 @@
                                             echo"     <button type = 'submit' class = 'btn btn-info pull-right'>Guardar</button>";
                                             echo" </div>";
                                             echo" </form";
-                                        } else {
+                                        } 
+                                        else {
 
                                             echo"   <form class = 'form-horizontal' method = 'POST' action = '../../controlador/ControUsuario.php'>";
                                             echo"  <div class = 'box-body'>";
@@ -333,7 +338,8 @@
                     document.frmPass.id.disabled=true
                     document.frmPass.usuario.value = usuario;
                     document.frmPass.id.disabled=true
-                    document.frmPass.pass.value = '';
+                    document.frmPass.pass1.value = '';
+                    document.frmPass.pass2.value = '';
                     
                     
                     $('#modal').modal('show');
