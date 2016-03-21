@@ -83,8 +83,9 @@ class Data {
             echo" <span class = 'caret'></span>";
             echo" </button>";
             echo " <ul class = 'dropdown-menu' role = 'menu'>";
-            echo " <li><a href='user.php?=id=".$row[0]."&user=".$row[1]."&per=".$row[2]."&es=".$row[3]."&ed=".$row[4]."&el=".$row[5]."'> Editar Usuario</a></li>";
+            echo " <li><a href='user.php?=id=" . $row[0] . "&user=" . $row[1] . "&per=" . $row[2] . "&es=" . $row[3] . "&ed=" . $row[4] . "&el=" . $row[5] . "'> Editar Usuario</a></li>";
             echo " <li><a href='user.php'> Cambiar Contraseña</a></li>";
+            echo " <li><a onclick = Eliminar('$row[0]')> Eliminar</a></li>";
 
             echo " </ul>";
             echo " </div>";
@@ -191,26 +192,7 @@ class Data {
         $sql = "SELECT e.ip,e.nombre,c.nombre,b.nombre,s.nombre, a.anexo , a.numeroExterno from equipo e,centro c,box b,sector s,anexo a where b.id = e.box and s.id = e.sector and c.id = e.centro and a.anexo = e.anexo";
         $res = $this->c->ejecutar($sql);
 
-        echo" <script type='text/javascript' charset='utf-8'>";
-        echo"   $(document).ready(function () {";
-        echo"       $('#datatables').dataTable({";
-        echo "  'oLanguage': {";
-        echo "   'sLengthMenu': 'Mostrar _MENU_ Anexos por página',";
-        echo "   'sSearch': 'Buscar',";
-        echo "   'sEmptyTable': 'Vacio',";
-        echo "   'sZeroRecords':'Sin Resultados',";
-
-        echo "   'oPaginate': { ";
-        echo "   'sLast': 'Última página',";
-        echo"    'sFirst': 'Primera',";
-        echo"    'sNext': 'Siguiente',";
-        echo"    'sPrevious': 'Anterior'";
-        echo" },";
-        echo "    'sInfo': 'Hay _TOTAL_ Anexos. Mostrando de (_START_ a _END_)',";
-        echo" }";
-        echo"   })";
-        echo "})";
-        echo "  </script> ";
+        
 
         echo"  <table id='datatables' class='table table-striped table-bordered table-hover table-condensed' >";
         echo"     <thead style='background-color: rgb(40, 96, 144); color: white;'>";
@@ -700,9 +682,8 @@ class Data {
 
         $this->c->ejecutar($sql);
     }
-    
-    
-        public function insertUsuario($nombre,$pass,$permiso,$estado,$editar,$eliminar) {
+
+    public function insertUsuario($nombre, $pass, $permiso, $estado, $editar, $eliminar) {
         $sql = "insert into usuario values (null,'" . $nombre . "','" . $pass . "','" . $permiso . "','" . $estado . "','" . $editar . "','" . $eliminar . "')";
 
         if (!$this->c->ejecutar($sql)) {
@@ -715,6 +696,7 @@ class Data {
             echo '</script>';
         }
     }
+
 //    
 //     
 //      
@@ -995,6 +977,38 @@ class Data {
         $sql = "UPDATE `agendaCormun`.`funcionarioPc` SET `funcionario` = '" . $funcionario . "', `equipo` = '" . $equipo . "' WHERE `funcionarioPc`.`id` = '" . $id . "'";
 
         $this->c->ejecutar($sql);
+    }
+
+    //
+//    
+//    
+//    
+//    
+//    Borrar
+//    
+//    
+//    
+//    
+//    
+//    
+//    
+//    
+//    
+//    
+
+
+
+    public function borrarUsuario($id) {
+        $sql = "DELETE FROM usuario WHERE id = '" . $id . "'";
+        if (!$this->c->ejecutar($sql)) {
+            echo '<script language="javascript">';
+            echo 'alert("Error, No se Realizo la accion");location.href="../vista/portal.php"';
+            echo '</script>';
+        } else {
+            echo '<script language="javascript">';
+            echo 'alert("Eliminado Correctamente"); location.href="../vista/portal.php"';
+            echo '</script>';
+        }
     }
 
 }
