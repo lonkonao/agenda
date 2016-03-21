@@ -18,9 +18,3 @@ $d = new Data();
 $d->insertUsuario($nombre, $passwords, $permiso, $estado, $editar, $eliminar);
 
 
-
-
-
-
-header("location:  ../vista/portal.php");
-
