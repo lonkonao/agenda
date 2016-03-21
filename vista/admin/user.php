@@ -133,7 +133,7 @@
                 <div id='contenido'>
 
                     <div class="row" style="margin-left: 10px;margin-top:10px">
-                        <div class="col-md-10">
+                        <div class="col-md-11">
                             <div class="box box-warning ">
                                 <div class="box-header with-border">
                                     <h3 class="box-title">Usuarios</h3>
@@ -155,6 +155,10 @@
                                             echo"  <div class = 'col-sm-10'>";
                                             echo"  <label>Nombre Usuario</label>";
                                             echo"  <input type = 'text' class = 'form-control' name = 'txtNombre' value='" . $user . "'>";
+                                            echo"  </div>";
+                                            echo"  <div class = 'col-sm-10'>";
+                                            echo"  <label>Contraseña</label>";
+                                            echo"  <input type = 'password' class = 'form-control' name = 'txtPass'>";
                                             echo"  </div>";
                                             echo"  <div class = 'col-sm-10'>";
                                             echo"  <label>Permiso Usuario</label>";
@@ -203,10 +207,6 @@
                                             echo"  <input type = 'text' class = 'form-control' name = 'txtNombre'>";
                                             echo"  </div>";
                                             echo"  <div class = 'col-sm-10'>";
-                                            echo"  <label>Contraseña</label>";
-                                            echo"  <input type = 'password' class = 'form-control' name = 'txtPass'>";
-                                            echo"  </div>";
-                                            echo"  <div class = 'col-sm-10'>";
                                             echo"  <label>Permiso Usuario</label>";
                                             $d->comboPermiso();
                                             echo"  </div>";
@@ -242,9 +242,8 @@
                                     </div>
                                     <div class = "col-xs-6">
                                         <?php
-                                        require_once '../../modelo/Data.php';
-                                        $d = new Data();
-                                        $d->listaFuncionario();
+                                        
+                                        $d->listaUsuario();
                                         ?>
                                     </div>
                                 </div>
