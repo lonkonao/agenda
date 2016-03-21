@@ -7,10 +7,11 @@ $usuario = $_POST["txtUser"];
 $pass = $_POST['txtPass'];
 
 
+$passwords = md5($pass);
 $d = new Data();
 
 
-$us = $d->existeUsuario($usuario, $pass);
+$us = $d->existeUsuario($usuario, $passwords);
 
 
 

@@ -702,8 +702,8 @@ class Data {
     }
     
     
-        public function insertUsuario($nombre,$permiso,$estado,$editar,$eliminar) {
-        $sql = "insert into usuario values (null,'" . $nombre . "','" . $permiso . "','" . $estado . "','" . $editar . "','" . $eliminar . "')";
+        public function insertUsuario($nombre,$pass,$permiso,$estado,$editar,$eliminar) {
+        $sql = "insert into usuario values (null,'" . $nombre . "','" . $pass . "','" . $permiso . "','" . $estado . "','" . $editar . "','" . $eliminar . "')";
 
         if (!$this->c->ejecutar($sql)) {
             echo '<script language="javascript">';

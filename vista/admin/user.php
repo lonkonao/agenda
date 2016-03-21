@@ -156,10 +156,7 @@
                                             echo"  <label>Nombre Usuario</label>";
                                             echo"  <input type = 'text' class = 'form-control' name = 'txtNombre' value='" . $user . "'>";
                                             echo"  </div>";
-                                            echo"  <div class = 'col-sm-10'>";
-                                            echo"  <label>Contraseña</label>";
-                                            echo"  <input type = 'password' class = 'form-control' name = 'txtPass'>";
-                                            echo"  </div>";
+                                           
                                             echo"  <div class = 'col-sm-10'>";
                                             echo"  <label>Permiso Usuario</label>";
                                             $d->comboPermiso();
@@ -205,6 +202,10 @@
                                             echo"  <div class = 'col-sm-10'>";
                                             echo"  <label>Nombre Usuario</label>";
                                             echo"  <input type = 'text' class = 'form-control' name = 'txtNombre'>";
+                                            echo"  </div>";
+                                             echo"  <div class = 'col-sm-10'>";
+                                            echo"  <label>Contraseña</label>";
+                                            echo"  <input type = 'password' class = 'form-control' name = 'txtPass'>";
                                             echo"  </div>";
                                             echo"  <div class = 'col-sm-10'>";
                                             echo"  <label>Permiso Usuario</label>";
