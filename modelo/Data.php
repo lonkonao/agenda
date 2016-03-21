@@ -978,6 +978,12 @@ class Data {
 
         $this->c->ejecutar($sql);
     }
+    
+    public function upPassUser($id,$pass) {
+        $sql= "UPDATE usuario set pass='".$pass."' where id='" . $id . "'";
+        $this->c->ejecutar($sql);
+        
+    }
 
     //
 //    
