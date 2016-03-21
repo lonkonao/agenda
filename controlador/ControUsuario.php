@@ -15,7 +15,7 @@ $d = new Data();
 
 
 
-$d->insertUsuario($nombre,$passwords, $permiso, $estado, $editar, $eliminar);
+$d->insertUsuario($nombre, $passwords, $permiso, $estado, $editar, $eliminar);
 
 
 
