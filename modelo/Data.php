@@ -49,6 +49,65 @@ class Data {
     
     }
     
+    
+    public function dataTablesUser() {
+        $sql = "select u.id,u.usuario,p.nombre,es.nombre,ed.nombre,eli.nombre from usuario u,permiso p,estado es,editar ed, eliminar eli where eli.id = u.eliminar and ed.id = u.editar and es.id =u.estado and p.id =u.permiso";
+        $res = $this->c->ejecutar($sql);
+
+
+        echo"  <table id='datatables' class='table  >";
+        echo"     <thead style='background-color: rgb(40, 96, 144); color: white;'>";
+        echo"        <tr>";
+        echo"            <th>ID</th>";
+        echo"            <th>USUARIO</th>";
+        echo"            <th>PERMISO</th>";
+        echo"            <th>ESTADO</th>";
+        echo"            <th>EDITAR</th>";
+        echo"            <th>ELIMINAR</th>";
+        echo "          <th>ACCIONES</th>";
+        echo"      </tr>";
+        echo"  </thead>";
+        echo"  <tbody>";
+
+        while ($row = $res->fetch_array()) {
+            echo"        <tr>";
+            echo"            <td>" . $row[0] . "</td>";
+            echo"            <td>" . $row[1] . "</td>";
+            echo"            <td>" . $row[2] . "</td>";
+            echo"            <td>" . $row[3] . "</td>";
+            echo"            <td>" . $row[4] . "</td>";
+            echo"            <td>" . $row[5] . "</td>";
+            echo"           <td>";
+
+            echo"<div class='btn-group' role='group'>";
+            echo" <button type = 'button' class = 'btn btn-danger dropdown-toggle' data-toggle = 'dropdown' aria-haspopup = 'true' aria-expanded = 'false'>";
+            echo"  ACCION";
+            echo" <span class = 'caret'></span>";
+            echo" </button>";
+            echo " <ul class = 'dropdown-menu' role = 'menu'>";
+            
+
+                
+                echo " <li><a onclick = Editar('$row[0]','$row[1]','$row[2]','$row[3]','$row[4]','$row[5]')> Cambiar Permisos</a></li>";
+           
+               
+            
+
+
+
+            echo " </ul>";
+            echo " </div>";
+
+            echo"</td>";
+            echo" </tr>";
+        }
+        echo" </tbody>";
+        echo" </table>"
+
+
+        ;
+    }
+    
 
     public function listaEquipo() {
 
