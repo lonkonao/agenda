@@ -2,19 +2,20 @@
 
 require_once '../modelo/Data.php';
 
+$id=$_GET['id'];
 $nombre = $_POST['txtNombre'];
 $permiso = $_POST['permiso'];
-$pass = $_POST['txtPass'];
+
 $estado = $_POST['estado'];
 $editar = $_POST['editar'];
 $eliminar = $_POST['eliminar'];
 
-$passwords = md5($pass);
+
 
 $d = new Data();
 
 
 
-$d->insertUsuario($nombre, $passwords, $permiso, $estado, $editar, $eliminar);
+$d->upUser($id, $nombre, $permiso, $estado, $editar, $eliminar);
 
 
