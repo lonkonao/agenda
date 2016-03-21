@@ -86,7 +86,7 @@ class Data {
             echo " <li><a href='user.php?id=" . $row[0] . "&user=" . $row[1] . "&per=" . $row[2] . "&es=" . $row[3] . "&ed=" . $row[4] . "&el=" . $row[5] . "'> Editar Usuario</a></li>";
             echo " <li><a onclick = Eliminar('$row[0]')> Eliminar</a></li>";
             echo " <li><a onclick = Pass('$row[0]','$row[1]')> Cambiar Contraseña</a></li>";
-            
+
             echo " </ul>";
             echo " </div>";
 
@@ -192,7 +192,7 @@ class Data {
         $sql = "SELECT e.ip,e.nombre,c.nombre,b.nombre,s.nombre, a.anexo , a.numeroExterno from equipo e,centro c,box b,sector s,anexo a where b.id = e.box and s.id = e.sector and c.id = e.centro and a.anexo = e.anexo";
         $res = $this->c->ejecutar($sql);
 
-        
+
 
         echo"  <table id='datatables' class='table table-striped table-bordered table-hover table-condensed' >";
         echo"     <thead style='background-color: rgb(40, 96, 144); color: white;'>";
@@ -883,8 +883,8 @@ class Data {
         }
         echo "</select>";
     }
-    
-      public function comboPermisoF($per) {
+
+    public function comboPermisoF($per) {
 
         $sql = "select id,nombre from permiso";
 
@@ -912,8 +912,8 @@ class Data {
         }
         echo "</select>";
     }
-    
-        public function comboEstadof($es) {
+
+    public function comboEstadof($es) {
 
         $sql = "select id,nombre from estado";
 
@@ -941,6 +941,7 @@ class Data {
         }
         echo "</select>";
     }
+
     public function comboEditarF($ed) {
 
         $sql = "select id,nombre from editar";
@@ -969,8 +970,8 @@ class Data {
         }
         echo "</select>";
     }
-    
-       public function comboEliminarF($el) {
+
+    public function comboEliminarF($el) {
 
         $sql = "select id,nombre from eliminar";
 
@@ -1041,11 +1042,15 @@ class Data {
 
         $this->c->ejecutar($sql);
     }
-    
-    public function upPassUser($id,$pass) {
-        $sql= "UPDATE usuario set pass='".$pass."' where id='" . $id . "'";
+
+    public function upPassUser($id, $pass) {
+        $sql = "UPDATE usuario set pass='" . $pass . "' where id='" . $id . "'";
         $this->c->ejecutar($sql);
-        
+    }
+    
+    public function upUser($id,$user,$per,$es,$ed,$el) {
+        $sql = "UPDATE usuario set usuario='" . $user . "', permiso='" . $per . "', estado='" . $es . "', editar='" . $ed . "', eliminar='" . $el . "' where id='" . $id . "'";
+        $this->c->ejecutar($sql);
     }
 
     //
