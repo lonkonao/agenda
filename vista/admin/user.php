@@ -132,6 +132,17 @@
 
                 <div id='contenido'>
 
+                    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">Borrar Usuario</h4>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
                     <div class="row" style="margin-left: 10px;margin-top:10px">
                         <div class="col-md-11">
                             <div class="box box-warning ">
@@ -165,10 +176,7 @@
                                             echo"  <label>Estado Usuario</label>";
                                             $d->comboEstado();
                                             echo"  </div>";
-                                            echo"  <div class = 'col-sm-10'>";
-                                            echo"  <label>Estado Usuario</label>";
-                                            $d->comboEstado();
-                                            echo"  </div>";
+                                        
                                             echo"  <div class = 'col-sm-10'>";
                                             echo"  <label>Permiso Editar</label>";
                                             $d->comboEditar();
@@ -210,10 +218,6 @@
                                             echo"  <div class = 'col-sm-10'>";
                                             echo"  <label>Permiso Usuario</label>";
                                             $d->comboPermiso();
-                                            echo"  </div>";
-                                            echo"  <div class = 'col-sm-10'>";
-                                            echo"  <label>Estado Usuario</label>";
-                                            $d->comboEstado();
                                             echo"  </div>";
                                             echo"  <div class = 'col-sm-10'>";
                                             echo"  <label>Estado Usuario</label>";
@@ -290,7 +294,7 @@
         <!-- Add the sidebar's background. This div must be placed
              immediately after the control sidebar -->
 
-
+        <script src="../../js/ajax.js"></script>
         <!-- jQuery 2.1.4 -->
         <script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
         <!-- jQuery UI 1.11.4 -->
