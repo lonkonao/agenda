@@ -192,6 +192,13 @@
                                         require_once '../../modelo/Data.php';
                                         $d = new Data();
                                         if (isset($_GET['id'])) {
+                                            
+                                            $user=$_GET['user'];
+                                            $per=$_GET['per'];
+                                            $es=$_GET['es'];
+                                            $ed=$_GET['ed'];
+                                            $el=$_GET['el'];
+                                            
 
 
                                             echo"   <form class = 'form-horizontal' method = 'POST' action = ''>";
@@ -204,31 +211,24 @@
 
                                             echo"  <div class = 'col-sm-10'>";
                                             echo"  <label>Permiso Usuario</label>";
-                                            $d->comboPermiso();
+                                            $d->comboPermisoF($per);
                                             echo"  </div>";
                                             echo"  <div class = 'col-sm-10'>";
                                             echo"  <label>Estado Usuario</label>";
-                                            $d->comboEstado();
+                                            $d->comboEstadof($es);
                                             echo"  </div>";
 
                                             echo"  <div class = 'col-sm-10'>";
                                             echo"  <label>Permiso Editar</label>";
-                                            $d->comboEditar();
+                                            $d->comboEditarF($ed);
                                             echo"  </div>";
                                             echo"  <div class = 'col-sm-10'>";
                                             echo"  <label>Permiso Eliminar</label>";
-                                            $d->comboEliminar();
-                                            echo"  </div>";
+                                            $d->comboEliminarF($el);
+                                                   echo"  </div>";
 
 
 
-
-
-
-
-
-
-                                            echo" </div>";
                                             echo"  </div>";
 
                                             echo" </div><!--/.box-body -->";
@@ -335,9 +335,9 @@
 
 
                     document.frmPass.id.value = id;
-                    document.frmPass.id.disabled=true
+                    document.frmPass.id.disabled=true;
                     document.frmPass.usuario.value = usuario;
-                    document.frmPass.id.disabled=true
+                    document.frmPass.id.disabled=true;
                     document.frmPass.pass1.value = '';
                     document.frmPass.pass2.value = '';
                     
