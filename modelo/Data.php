@@ -1050,7 +1050,17 @@ class Data {
     
     public function upUser($id,$user,$per,$es,$ed,$el) {
         $sql = "UPDATE usuario set usuario='" . $user . "', permiso='" . $per . "', estado='" . $es . "', editar='" . $ed . "', eliminar='" . $el . "' where id='" . $id . "'";
-        $this->c->ejecutar($sql);
+        
+        
+        if (!$this->c->ejecutar($sql)) {
+            echo '<script language="javascript">';
+            echo 'alert("Error, No se Realizo la accion");location.href="../vista/portal.php"';
+            echo '</script>';
+        } else {
+            echo '<script language="javascript">';
+            echo 'alert("El Usuario ('.$user.') Ha Sido Actualizado Correctamente"); location.href="../vista/portal.php"';
+            echo '</script>';
+        }
     }
 
     //
