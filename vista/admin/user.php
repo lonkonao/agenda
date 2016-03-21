@@ -133,16 +133,46 @@
                 <div id='contenido'>
 
                     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title">Borrar Usuario</h4>
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title">Borrar Usuario</h4>
+                                </div>
+                                <form role="form" action="" name="frmPass" onsubmit="PassUser(id, usuario, pass); return false">
+                                    <div class="col-lg-12">
+
+
+                                        <div class="form-group">
+                                            <label>ID</label>
+                                            <input name="id" class="form-control" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Usuario</label>
+                                            <input name="usuario" class="form-control" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Contraseña</label>
+                                            <input name="pass" type="password" class="form-control" required>
+                                        </div>
+
+
+
+                                        <button type="submit" class="btn btn-info btn-lg">
+                                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Guardar
+                                        </button>
+
+                                    </div>
+                                </form>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger btn-circle" data-dismiss="modal"><i class="fa fa-times"></i></button>
+                                </div>
+
                             </div>
-                            
                         </div>
                     </div>
-                </div>
                     <div class="row" style="margin-left: 10px;margin-top:10px">
                         <div class="col-md-11">
                             <div class="box box-warning ">
@@ -153,12 +183,12 @@
                                 <div class="box-body">
                                     <div class="col-xs-4" style="border:1px solid #f4f4f4;">
                                         <!-- form start -->
-                                       
+
                                         <?php
                                         require_once '../../modelo/Data.php';
-                                            $d = new Data();
+                                        $d = new Data();
                                         if (isset($_GET['id'])) {
-                                             
+
 
                                             echo"   <form class = 'form-horizontal' method = 'POST' action = ''>";
                                             echo"  <div class = 'box-body'>";
@@ -167,7 +197,7 @@
                                             echo"  <label>Nombre Usuario</label>";
                                             echo"  <input type = 'text' class = 'form-control' name = 'txtNombre' value='" . $user . "'>";
                                             echo"  </div>";
-                                           
+
                                             echo"  <div class = 'col-sm-10'>";
                                             echo"  <label>Permiso Usuario</label>";
                                             $d->comboPermiso();
@@ -176,7 +206,7 @@
                                             echo"  <label>Estado Usuario</label>";
                                             $d->comboEstado();
                                             echo"  </div>";
-                                        
+
                                             echo"  <div class = 'col-sm-10'>";
                                             echo"  <label>Permiso Editar</label>";
                                             $d->comboEditar();
@@ -192,7 +222,7 @@
 
 
 
-                                            
+
 
                                             echo" </div>";
                                             echo"  </div>";
@@ -203,15 +233,15 @@
                                             echo" </div>";
                                             echo" </form";
                                         } else {
-                                           
-                                             echo"   <form class = 'form-horizontal' method = 'POST' action = '../../controlador/ControUsuario.php'>";
+
+                                            echo"   <form class = 'form-horizontal' method = 'POST' action = '../../controlador/ControUsuario.php'>";
                                             echo"  <div class = 'box-body'>";
                                             echo"  <div class = 'form-group'>";
                                             echo"  <div class = 'col-sm-10'>";
                                             echo"  <label>Nombre Usuario</label>";
                                             echo"  <input type = 'text' class = 'form-control' name = 'txtNombre'>";
                                             echo"  </div>";
-                                             echo"  <div class = 'col-sm-10'>";
+                                            echo"  <div class = 'col-sm-10'>";
                                             echo"  <label>Contraseña</label>";
                                             echo"  <input type = 'password' class = 'form-control' name = 'txtPass'>";
                                             echo"  </div>";
@@ -233,7 +263,7 @@
                                             echo"  </div>";
 
 
-                                          
+
                                             echo"  </div>";
 
                                             echo" </div><!--/.box-body -->";
@@ -247,7 +277,6 @@
                                     </div>
                                     <div class = "col-xs-6">
                                         <?php
-                                        
                                         $d->listaUsuario();
                                         ?>
                                     </div>
@@ -294,6 +323,24 @@
         <!-- Add the sidebar's background. This div must be placed
              immediately after the control sidebar -->
 
+        <script type="text/javascript">
+            
+            function Pass(id, usuario) {
+
+
+
+                    document.frmPass.id.value = id;
+                    document.frmPass.id.disabled=true
+                    document.frmPass.usuario.value = usuario;
+                    document.frmPass.id.disabled=true
+                    document.frmPass.pass.value = '';
+                    
+                    
+                    $('#modal').modal('show');
+                }
+        </script>
+        
+        
         <script src="../../js/ajax.js"></script>
         <!-- jQuery 2.1.4 -->
         <script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
@@ -301,7 +348,7 @@
         <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
         <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
         <script>
-            $.widget.bridge('uibutton', $.ui.button);
+                                    $.widget.bridge('uibutton', $.ui.button);
         </script>
         <!-- Bootstrap 3.3.5 -->
         <script src="../../bootstrap/js/bootstrap.min.js"></script>
