@@ -83,7 +83,7 @@ class Data {
             echo" <span class = 'caret'></span>";
             echo" </button>";
             echo " <ul class = 'dropdown-menu' role = 'menu'>";
-            echo " <li><a href='user.php'> Editar</a></li>";
+            echo " <li><a href='user.php?=id=".$row[0]."&user=".$row[1]."&per=".$row[2]."&es=".$row[3]."&ed=".$row[4]."&el=".$row[5]."'> Editar Usuario</a></li>";
             echo " <li><a href='user.php'> Cambiar Contraseña</a></li>";
 
             echo " </ul>";
@@ -700,7 +700,21 @@ class Data {
 
         $this->c->ejecutar($sql);
     }
+    
+    
+        public function insertUsuario($nombre,$permiso,$estado,$editar,$eliminar) {
+        $sql = "insert into usuario values (null,'" . $nombre . "','" . $permiso . "','" . $estado . "','" . $editar . "','" . $eliminar . "')";
 
+        if (!$this->c->ejecutar($sql)) {
+            echo '<script language="javascript">';
+            echo 'alert("Error, No se Realizo la accion");location.href="../vista/portal.php"';
+            echo '</script>';
+        } else {
+            echo '<script language="javascript">';
+            echo 'alert("Registrado Correctamente"); location.href="../vista/portal.php"';
+            echo '</script>';
+        }
+    }
 //    
 //     
 //      
