@@ -114,13 +114,17 @@ if ($p == 0) {
                                 <?php
                                 if ($e == 1) {
                                     echo"<li><a href = 'mantenedor.php'><i class = 'fa fa-gears'></i>General</a></li>";
-                                    echo"<li><a href = '#'><i class = 'fa fa-stethoscope'></i>Funcionario</a></li>";
+                                    echo"<li><a href = 'funcionario.php'><i class = 'fa fa-stethoscope'></i>Funcionario</a></li>";
                                     echo"<li><a href = 'equipo.php'><i class = 'fa fa-desktop '></i>Equipo</a></li>";
                                 } elseif ($e == 0) {
 
                                     echo" <li><a href='../usuario/anexo.php'><i class='fa fa-phone'></i>Anexo</a></li> ";
                                     echo"<li><a href='../usuario/funcionario.php'><i class='fa fa-user'></i>Funcionario</a></li> ";
                                 }
+                                  if ($p==0) {
+    
+                                    echo" <li><a href='#'><i class='fa fa-user-md'></i>Usuarios</a></li> ";
+}
                                 ?>
                             </ul>
                         </li>
