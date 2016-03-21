@@ -55,7 +55,7 @@ if ($p == 0) {
             <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-        
+
 
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
@@ -104,9 +104,9 @@ if ($p == 0) {
                             <ul class="treeview-menu">
                                 <li><a href='#'><i class='fa fa-phone'></i>Anexo</a></li> 
                                 <li><a href='funcionarioBus.php'><i class='fa fa-user'></i>Funcionario</a></li> 
-                           </ul>
+                            </ul>
                         </li>
-                        
+
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-gears"></i> <span>Mantenedor</span> <i class="fa fa-angle-left pull-right"></i>
@@ -123,8 +123,10 @@ if ($p == 0) {
                                     echo" <li><a href='usuario/anexo.php'><i class='fa fa-phone'></i>Anexo</a></li> ";
                                     echo"<li><a href='usuario/funcionario.php'><i class='fa fa-user'></i>Funcionario</a></li> ";
                                 }
+                                if ($p == 0) {
 
-                         
+                                    echo" <li><a href='../admin/user.php'><i class='fa fa-user-md'></i>Usuarios</a></li> ";
+                                }
                                 ?>
                             </ul>
                         </li>
@@ -148,7 +150,7 @@ if ($p == 0) {
 
                 <!-- Main content -->
 
-                
+
                 <div class="row">
                     <div class="col-xs-12">
                         <!-- /.box -->

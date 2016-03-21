@@ -121,9 +121,10 @@ if ($p == 0) {
 
                                     echo" <li><a href='../usuario/anexo.php'><i class='fa fa-phone'></i>Anexo</a></li> ";
                                     echo"<li><a href='../usuario/funcionario.php'><i class='fa fa-user'></i>Funcionario</a></li> ";
-                                }
-
-                         
+                                }if ($p==0) {
+    
+                                    echo" <li><a href='../admin/user.php'><i class='fa fa-user-md'></i>Usuarios</a></li> ";
+}
                                 ?>
                             </ul>
                         </li>
