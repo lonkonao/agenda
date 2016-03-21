@@ -83,7 +83,7 @@ class Data {
             echo" <span class = 'caret'></span>";
             echo" </button>";
             echo " <ul class = 'dropdown-menu' role = 'menu'>";
-            echo " <li><a href='user.php?=id=" . $row[0] . "&user=" . $row[1] . "&per=" . $row[2] . "&es=" . $row[3] . "&ed=" . $row[4] . "&el=" . $row[5] . "'> Editar Usuario</a></li>";
+            echo " <li><a href='user.php?id=" . $row[0] . "&user=" . $row[1] . "&per=" . $row[2] . "&es=" . $row[3] . "&ed=" . $row[4] . "&el=" . $row[5] . "'> Editar Usuario</a></li>";
             echo " <li><a onclick = Eliminar('$row[0]')> Eliminar</a></li>";
             echo " <li><a onclick = Pass('$row[0]','$row[1]')> Cambiar Contraseña</a></li>";
             
@@ -883,6 +883,22 @@ class Data {
         }
         echo "</select>";
     }
+    
+      public function comboPermisoF($per) {
+
+        $sql = "select id,nombre from permiso";
+
+        $res = $this->c->ejecutar($sql);
+        echo "<select id = 'permiso' name='permiso' class='form-control'>";
+        while ($resultado = $res->fetch_array()) {
+            if ($per == $resultado[1]) {
+                echo "<option value='" . $resultado[0] . "' selected> " . $resultado[1] . "</option>";
+            } else {
+                echo "<option value='" . $resultado[0] . "'> " . $resultado[1] . "</option>";
+            }
+        }
+        echo "</select>";
+    }
 
     public function comboEstado() {
 
@@ -893,6 +909,22 @@ class Data {
         while ($resultado = $res->fetch_array()) {
 
             echo "<option value='" . $resultado[0] . "'> " . $resultado[1] . "</option>";
+        }
+        echo "</select>";
+    }
+    
+        public function comboEstadof($es) {
+
+        $sql = "select id,nombre from estado";
+
+        $res = $this->c->ejecutar($sql);
+        echo "<select id = 'estado' name='estado' class='form-control'>";
+        while ($resultado = $res->fetch_array()) {
+            if ($es == $resultado[1]) {
+                echo "<option value='" . $resultado[0] . "' selected> " . $resultado[1] . "</option>";
+            } else {
+                echo "<option value='" . $resultado[0] . "'> " . $resultado[1] . "</option>";
+            }
         }
         echo "</select>";
     }
@@ -909,6 +941,21 @@ class Data {
         }
         echo "</select>";
     }
+    public function comboEditarF($ed) {
+
+        $sql = "select id,nombre from editar";
+
+        $res = $this->c->ejecutar($sql);
+        echo "<select id = 'editar' name='editar' class='form-control'>";
+        while ($resultado = $res->fetch_array()) {
+            if ($ed == $resultado[1]) {
+                echo "<option value='" . $resultado[0] . "' selected> " . $resultado[1] . "</option>";
+            } else {
+                echo "<option value='" . $resultado[0] . "'> " . $resultado[1] . "</option>";
+            }
+        }
+        echo "</select>";
+    }
 
     public function comboEliminar() {
 
@@ -919,6 +966,22 @@ class Data {
         while ($resultado = $res->fetch_array()) {
 
             echo "<option value='" . $resultado[0] . "'> " . $resultado[1] . "</option>";
+        }
+        echo "</select>";
+    }
+    
+       public function comboEliminarF($el) {
+
+        $sql = "select id,nombre from eliminar";
+
+        $res = $this->c->ejecutar($sql);
+        echo "<select id = 'eliminar' name='eliminar' class='form-control'>";
+        while ($resultado = $res->fetch_array()) {
+            if ($el == $resultado[1]) {
+                echo "<option value='" . $resultado[0] . "' selected> " . $resultado[1] . "</option>";
+            } else {
+                echo "<option value='" . $resultado[0] . "'> " . $resultado[1] . "</option>";
+            }
         }
         echo "</select>";
     }
