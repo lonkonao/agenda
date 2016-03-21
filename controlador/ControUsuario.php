@@ -2,19 +2,18 @@
 require_once '../modelo/Data.php';
 
 $nombre = $_POST['txtNombre'];
+$permiso = $_POST['permiso'];
+$estado = $_POST['estado'];
+$editar = $_POST['editar'];
+$eliminar = $_POST['eliminar'];
 
-$sector = $_POST['sector'];
-$centro = $_POST['centro'];
-$anexo = $_POST['txtAnexo'];
-$numExterno = $_POST['txtnum'];
-$funcionario = $_POST['funcionario'];
 
 
 $d= new Data();
-$d->insertAnexo($anexo, $numExterno);
 
-$d->insertEquipo($ip, $nombre, $box, $sector, $centro, $anexo);
-$d->insertFuncioPc($funcionario, $ip);
+
+$d->insertUsuario($nombre, $permiso, $estado, $editar, $eliminar);
+
 
 
 
