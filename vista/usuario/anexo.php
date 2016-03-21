@@ -16,6 +16,7 @@
         <!-- Ionicons -->
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <!-- Theme style -->
+        <link rel="stylesheet" href="http://datatables.net/release-datatables/extensions/TableTools/css/dataTables.tableTools.css">
         <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
         <!-- AdminLTE Skins. Choose a skin from the css/skins
              folder instead of downloading all of them to reduce the load. -->
@@ -30,6 +31,7 @@
         <link rel="stylesheet" href="../../plugins/datepicker/datepicker3.css">
         <!-- Daterange picker -->
         <link rel="stylesheet" href="../../plugins/datatables/dataTables.bootstrap.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.1.2/css/buttons.dataTables.min.css">
         <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker-bs3.css">
         <!-- bootstrap wysihtml5 - text editor -->
         <link rel="stylesheet" href="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
@@ -40,7 +42,7 @@
             <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-        
+
 
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
@@ -60,7 +62,7 @@
                     <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                         <span class="sr-only">Toggle navigation</span>
                     </a>
-<form id="signin" class="navbar-form navbar-right" role="form" method="post" action="../../controlador/ControInicioSession.php">
+                    <form id="signin" class="navbar-form navbar-right" role="form" method="post" action="../../controlador/ControInicioSession.php">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                             <input id="email" type="text" name="txtUser" class="form-control" placeholder="Usuario">                                        
@@ -126,7 +128,7 @@
 
                 <!-- Main content -->
 
-                
+
                 <div class="row">
                     <div class="col-xs-12">
                         <!-- /.box -->
@@ -136,7 +138,25 @@
                                 <h3 class="box-title">Anexos</h3>
                             </div><!-- /.box-header -->
                             <div class="box-body table-responsive no-padding">
-
+                                <script type='text/javascript' charset='utf-8'>
+                                    $(document).ready(function () {
+                                    $('#datatables').dataTable({
+                                            'oLanguage': {
+                                            'sLengthMenu': 'Mostrar _MENU_ Anexos por página',
+                                                    'sSearch': 'Buscar',
+                                                    'sEmptyTable': 'Vacio',
+                                                    'sZeroRecords': 'Sin Resultados',
+                                                    'oPaginate': {
+                                                    'sLast': 'Última página',
+                                                            'sFirst': 'Primera',
+                                                            'sNext': 'Siguiente',
+                                                            'sPrevious': 'Anterior'
+                                                    },
+                                                    'sInfo': 'Hay _TOTAL_ Anexos. Mostrando de (_START_ a _END_)',
+                                            }
+                                    })
+                                    })
+                                </script> 
                                 <?php
                                 require_once '../../modelo/Data.php';
 
@@ -195,12 +215,20 @@
         <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
         <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
         <script>
-            $.widget.bridge('uibutton', $.ui.button);
+                                    $.widget.bridge('uibutton', $.ui.button);
         </script>
         <!-- Bootstrap 3.3.5 -->
         <script src="../../bootstrap/js/bootstrap.min.js"></script>
         <!-- Morris.js charts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.1.2/js/dataTables.buttons.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+        <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+        <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.1.2/js/buttons.html5.min.js"></script> 
+
+
         <script src="../../plugins/morris/morris.min.js"></script>
         <!-- Sparkline -->
         <script src="../../plugins/sparkline/jquery.sparkline.min.js"></script>
