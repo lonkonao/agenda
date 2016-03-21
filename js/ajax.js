@@ -47,10 +47,10 @@ function Registrar(accion) {
 
 
 
-function Eliminar(ip) {
-    if (confirm("En realizad desea eliminar este registro?")) {
+function Eliminar(id) {
+    if (confirm("En realidad desea eliminar este Usuario?")) {
         ajax = objetoAjax();
-        ajax.open("POST", "ControEli.php", true);
+        ajax.open("POST", "../../controlador/ControEliUser.php", true);
         ajax.onreadystatechange = function () {
             if (ajax.readyState == 4) {
                 alert('El registro fue eliminado con exito!');
@@ -58,7 +58,7 @@ function Eliminar(ip) {
             }
         }
         ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        ajax.send("ip=" + ip)
+        ajax.send("id=" + id)
     } else {
         //Sin acciones
     }
