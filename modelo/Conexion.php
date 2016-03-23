@@ -7,7 +7,7 @@ class Conexion {
     
 
     public function __construct() {
-        $this->con = new mysqli("dev.saludcormun.cl", "agenda", "TICS.informatica2016", "agendaCormun");
+        $this->con = new mysqli(<!-- jajajaj -->);
 
         if (!$this->con) {
             die("Error al conectar: " . mysqli_errno());
