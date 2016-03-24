@@ -986,6 +986,21 @@ class Data {
         }
         echo "</select>";
     }
+    
+    
+        public function comboAnexo() {
+
+        $sql = "select anexo,numeroExterno from anexo";
+
+        $res = $this->c->ejecutar($sql);
+        echo "<select id='anexo' name='anexo' class='form-control'>";
+        while ($resultado = $res->fetch_array()) {
+
+            echo "<option value='" . $resultado[0] . "'> " . $resultado[1] . "</option>";
+        }
+        echo "</select>";
+    }
+    
 
     //    
 //     
