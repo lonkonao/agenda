@@ -151,7 +151,7 @@ if ($p == 0) {
                 <div id='contenido'>
 
                     <div class="row" style="margin-left: 10px;margin-top:10px">
-                        <div class="col-md-10">
+                        <div class="col-md-11">
                             <div class="box box-warning ">
                                 <div class="box-header with-border">
                                     <h3 class="box-title">Funcionario</h3>
