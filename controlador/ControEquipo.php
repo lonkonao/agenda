@@ -5,13 +5,13 @@ $nombre = $_POST['txtNombre'];
 $box = $_POST['box'];
 $sector = $_POST['sector'];
 $centro = $_POST['centro'];
-$anexo = $_POST['txtAnexo'];
+$anexo = $_POST['anexo'];
 $numExterno = $_POST['txtnum'];
 $funcionario = $_POST['funcionario'];
 
 
 $d= new Data();
-$d->insertAnexo($anexo, $numExterno);
+//$d->insertAnexo($anexo, $numExterno);
 
 $d->insertEquipo($ip, $nombre, $box, $sector, $centro, $anexo);
 $d->insertFuncioPc($funcionario, $ip);
