@@ -16,7 +16,6 @@ $d= new Data();
 $d->insertEquipo($ip, $nombre, $box, $sector, $centro, $anexo);
 $d->insertFuncioPc($funcionario, $ip);
 
-
 //$d2= new Data();
 //$d2->insertAnexo($anexo, $numExterno);
 //
