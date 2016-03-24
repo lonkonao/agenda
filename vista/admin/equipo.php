@@ -275,7 +275,7 @@ if ($p == 0) {
                                             echo "         </div>";
                                             echo "         <div class='col-sm-10'>";
                                             echo "       <label>Anexo Equipo</label>";
-                                            echo "       <input type='number' class='form-control' name='txtAnexo' placeholder='Numero Anexo'>";
+                                            $d->comboAnexo();
                                             echo "   </div>";
                                             echo "   <div class='col-sm-10'>";
                                             echo "       <label>Numero Externo</label>";
