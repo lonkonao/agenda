@@ -145,8 +145,7 @@ if ($p == 0) {
                     </h1>
 
                 </section>
-
-
+                
                 <!-- Main content -->
 
 
