@@ -101,6 +101,8 @@ class Data {
                     break;
                 case 10: echo"<td>BRUJULA Y LABORATORIO</td>";
                     break;
+                case 41: echo"<td>CESFAM 4B</td>";
+                    break;
 
             }
 
@@ -184,6 +186,61 @@ class Data {
 
         echo '</div>';
     }
+    public function listaEquipoF($ce) {
+
+        $sql = "SELECT e.ip,e.nombre,b.nombre,s.nombre,c.nombre,a.anexo,a.numeroExterno,f.nombre,f.apellidoP "
+                . "from equipo e, box b, sector s, centro c,anexo a,funcionarioPc fp, funcionario f "
+                . "WHERE b.id=e.box and s.id =e.sector and c.id = e.centro and a.anexo = e.anexo and "
+                . "fp.equipo = e.ip and fp.funcionario = f.id and c.id = '".$ce."' ";
+        $res = $this->c->ejecutar($sql);
+
+
+
+
+        echo"<div class='col-md-13'>";
+        echo"  <table id='table' class='table table-striped'>";
+        echo"     <thead>";
+        echo"        <tr>";
+        echo"           <th>IP</th>";
+        echo"           <th>NOMBRE EQUIPO</th>";
+        echo"           <th>BOX</th>";
+        echo"           <th>SECTOR</th>";
+        echo"           <th>CENTRO</th>";
+        echo"           <th>ANEXO</th>";
+        echo"           <th>NUMERO EXTERNO</th>";
+        echo"           <th>FUNCIONARIO</th>";
+        echo"      </tr>";
+        echo"  </thead>";
+        echo"  <tbody>";
+
+        while ($row = $res->fetch_array()) {
+            echo"        <tr>";
+            echo"            <td>" . $row[0] . "</td>";
+            echo"            <td>" . $row[1] . "</td>";
+            echo"            <td>" . $row[2] . "</td>";
+            echo"            <td>" . $row[3] . "</td>";
+            echo"            <td>" . $row[4] . "</td>";
+            echo"            <td>" . $row[5] . "</td>";
+            echo"            <td>" . $row[6] . "</td>";
+            echo"            <td>" . $row[7] . "</td>";
+
+            echo "<td>";
+            echo"<div class='btn-group' role='group'>";
+            echo" <button type = 'button' class = 'btn btn-danger dropdown-toggle' data-toggle = 'dropdown' aria-haspopup = 'true' aria-expanded = 'false'>";
+            echo"  ACCION";
+            echo" <span class = 'caret'></span>";
+            echo" </button>";
+            echo " <ul class = 'dropdown-menu' role = 'menu'>";
+            echo " <li><a href='equipo.php?ip=" . $row[0] . "&nombre=" . $row[1] . "&box=" . $row[2] . "&sector=" . $row[3] . "&centro=" . $row[4] . "&anexo=" . $row[5] . "&numero=" . $row[6] . "&funcionario=" . $row[7] . "'> Actualizar</a></li>";
+            echo "</td>";
+            echo" </tr>";
+        }
+        echo" </tbody>";
+        echo" </table>";
+
+        echo '</div>';
+    }
+
 
     public function listaFuncio() {
 
@@ -757,19 +814,35 @@ class Data {
 //    
 //    
 //  
-    public function comboCentroF($nombre) {
+    public function comboCentroFA($nombre) {
 
-        $sql = "select id,nombre from centro";
+        $sql = "select id,nombre from centro ";
 
         $res = $this->c->ejecutar($sql);
         echo "<select id='centro' name='centro' class='form-control'>";
         while ($resultado = $res->fetch_array()) {
-            if ($nombre == $resultado[1]) {
+            if ($nombre == $resultado[0]) {
                 echo "<option value='" . $resultado[0] . "' selected> " . $resultado[1] . "</option>";
             } else {
                 echo "<option value='" . $resultado[0] . "'> " . $resultado[1] . "</option>";
             }
         }
+         echo "</select>";
+    }
+    public function comboCentroF($nombre) {
+
+        $sql = "select id,nombre from centro ";
+
+        $res = $this->c->ejecutar($sql);
+        echo "<select id='centro' name='centro' class='form-control' disabled>";
+        while ($resultado = $res->fetch_array()) {
+            if ($nombre == $resultado[0]) {
+                echo "<option value='" . $resultado[0] . "' selected> " . $resultado[1] . "</option>";
+            } else {
+                echo "<option value='" . $resultado[0] . "'> " . $resultado[1] . "</option>";
+            }
+        }
+         echo "</select>";
     }
 
     public function comboSectorF($nombre) {
@@ -803,6 +876,7 @@ class Data {
         }
         echo "</select>";
     }
+    
 
     public function comboFuncionarioF($nombre) {
 
@@ -1017,7 +1091,20 @@ class Data {
         echo "</select>";
     }
 
-    public function comboAnexo() {
+    public function comboAnexo($ce) {
+
+        $sql = "select anexo from anexo where anexo like '".$ce."%'";
+
+        $res = $this->c->ejecutar($sql);
+        echo "<select id='anexo' name='anexo' class='form-control'>";
+        while ($resultado = $res->fetch_array()) {
+
+            echo "<option value='" . $resultado[0] . "'> " . $resultado[0] . "</option>";
+        }
+        echo "</select>";
+    }
+    
+    public function comboAnexoTodos() {
 
         $sql = "select anexo from anexo";
 
@@ -1030,6 +1117,36 @@ class Data {
         echo "</select>";
     }
 
+      public function comboAnexoTodosF($anexo) {
+
+        $sql = "select anexo from anexo";
+
+        $res = $this->c->ejecutar($sql);
+        echo "<select id='anexo' name='anexo' class='form-control'>";
+        while ($resultado = $res->fetch_array()) {
+            if ($anexo == $resultado[0]) {
+                echo "<option value='" . $resultado[0] . "' selected> " . $resultado[0] . "</option>";
+            } else {
+                echo "<option value='" . $resultado[0] . "'> " . $resultado[0] . "</option>";
+            }
+        }
+        echo "</select>";
+    }
+      public function comboAnexoTodosFF($anexo,$ce) {
+
+        $sql = "select anexo from anexo where anexo like '".$ce."%'";
+
+        $res = $this->c->ejecutar($sql);
+        echo "<select id='anexo' name='anexo' class='form-control'>";
+        while ($resultado = $res->fetch_array()) {
+            if ($anexo == $resultado[0]) {
+                echo "<option value='" . $resultado[0] . "' selected> " . $resultado[0] . "</option>";
+            } else {
+                echo "<option value='" . $resultado[0] . "'> " . $resultado[0] . "</option>";
+            }
+        }
+        echo "</select>";
+    }
     //    
 //     
 //      

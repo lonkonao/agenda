@@ -256,11 +256,13 @@ if ($p == 0) {
                                                     echo "<option value='2'>CESFAM 2</option>";
                                                     echo "<option value='3'>CESFAM 3</option>";
                                                     echo "<option value='4'>CESFAM 4</option>";
+                                                    echo "<option value='41'>CESFAM 4B</option>";
                                                     echo "<option value='5'>CESFAM 5</option>";
                                                     echo "<option value='6'>CESFAM 6</option>";
                                                     echo "<option value='7'>CECOSF 1</option>";
                                                     echo "<option value='8'>CECOSF 2</option>";
                                                     echo "<option value='9'>CECOSF 4</option>";
+                                                    
                                                     echo "<option value='10'>BRUJULA Y LABORATORIO</option>";
                                                     
                                                     break;
@@ -270,6 +272,7 @@ if ($p == 0) {
                                                     echo "<option value='2'>CESFAM 2</option>";
                                                     echo "<option value='3'>CESFAM 3</option>";
                                                     echo "<option value='4'>CESFAM 4</option>";
+                                                     echo "<option value='41'>CESFAM 4B</option>";
                                                     echo "<option value='5'>CESFAM 5</option>";
                                                     echo "<option value='6'>CESFAM 6</option>";
                                                     echo "<option value='7'>CECOSF 1</option>";
@@ -284,6 +287,7 @@ if ($p == 0) {
                                                     echo "<option value='2' selected >CESFAM 2</option>";
                                                     echo "<option value='3'>CESFAM 3</option>";
                                                     echo "<option value='4'>CESFAM 4</option>";
+                                                     echo "<option value='41'>CESFAM 4B</option>";
                                                     echo "<option value='5'>CESFAM 5</option>";
                                                     echo "<option value='6'>CESFAM 6</option>";
                                                     echo "<option value='7'>CECOSF 1</option>";
@@ -298,6 +302,7 @@ if ($p == 0) {
                                                     echo "<option value='2'>CESFAM 2</option>";
                                                     echo "<option value='3' selected >CESFAM 3</option>";
                                                     echo "<option value='4'>CESFAM 4</option>";
+                                                     echo "<option value='41'>CESFAM 4B</option>";
                                                     echo "<option value='5'>CESFAM 5</option>";
                                                     echo "<option value='6'>CESFAM 6</option>";
                                                     echo "<option value='7'>CECOSF 1</option>";
@@ -312,6 +317,7 @@ if ($p == 0) {
                                                     echo "<option value='2'>CESFAM 2</option>";
                                                     echo "<option value='3'>CESFAM 3</option>";
                                                     echo "<option value='4' selected >CESFAM 4</option>";
+                                                     echo "<option value='41'>CESFAM 4B</option>";
                                                     echo "<option value='5'>CESFAM 5</option>";
                                                     echo "<option value='6'>CESFAM 6</option>";
                                                     echo "<option value='7'>CECOSF 1</option>";
@@ -325,8 +331,9 @@ if ($p == 0) {
                                                     echo "<option value='1'>CESFAM 1</option>";
                                                     echo "<option value='2'>CESFAM 2</option>";
                                                     echo "<option value='3'>CESFAM 3</option>";
-                                                    echo "<option value='4' selected >CESFAM 4</option>";
-                                                    echo "<option value='5'>CESFAM 5</option>";
+                                                    echo "<option value='4'  >CESFAM 4</option>";
+                                                     echo "<option value='41'>CESFAM 4B</option>";
+                                                    echo "<option value='5' selected>CESFAM 5</option>";
                                                     echo "<option value='6'>CESFAM 6</option>";
                                                     echo "<option value='7'>CECOSF 1</option>";
                                                     echo "<option value='8'>CECOSF 2</option>";
@@ -340,6 +347,7 @@ if ($p == 0) {
                                                     echo "<option value='2'>CESFAM 2</option>";
                                                     echo "<option value='3'>CESFAM 3</option>";
                                                     echo "<option value='4'>CESFAM 4</option>";
+                                                    echo "<option value='41'>CESFAM 4B</option>";
                                                     echo "<option value='5'>CESFAM 5</option>";
                                                     echo "<option value='6' selected >CESFAM 6</option>";
                                                     echo "<option value='7'>CECOSF 1</option>";
@@ -354,6 +362,7 @@ if ($p == 0) {
                                                     echo "<option value='2'>CESFAM 2</option>";
                                                     echo "<option value='3'>CESFAM 3</option>";
                                                     echo "<option value='4'>CESFAM 4</option>";
+                                                    echo "<option value='41'>CESFAM 4B</option>";
                                                     echo "<option value='5'>CESFAM 5</option>";
                                                     echo "<option value='6'>CESFAM 6</option>";
                                                     echo "<option value='7' selected >CECOSF 1</option>";
@@ -368,6 +377,7 @@ if ($p == 0) {
                                                     echo "<option value='2'>CESFAM 2</option>";
                                                     echo "<option value='3'>CESFAM 3</option>";
                                                     echo "<option value='4'>CESFAM 4</option>";
+                                                    echo "<option value='41'>CESFAM 4B</option>";
                                                     echo "<option value='5'>CESFAM 5</option>";
                                                     echo "<option value='6'>CESFAM 6</option>";
                                                     echo "<option value='7'>CECOSF 1</option>";
@@ -382,6 +392,7 @@ if ($p == 0) {
                                                     echo "<option value='2'>CESFAM 2</option>";
                                                     echo "<option value='3'>CESFAM 3</option>";
                                                     echo "<option value='4'>CESFAM 4</option>";
+                                                    echo "<option value='41'>CESFAM 4B</option>";
                                                     echo "<option value='5'>CESFAM 5</option>";
                                                     echo "<option value='6'>CESFAM 6</option>";
                                                     echo "<option value='7'>CECOSF 1</option>";
@@ -396,6 +407,22 @@ if ($p == 0) {
                                                     echo "<option value='2'>CESFAM 2</option>";
                                                     echo "<option value='3'>CESFAM 3</option>";
                                                     echo "<option value='4'>CESFAM 4</option>";
+                                                    echo "<option value='41'>CESFAM 4B</option>";
+                                                    echo "<option value='5'>CESFAM 5</option>";
+                                                    echo "<option value='6'>CESFAM 6</option>";
+                                                    echo "<option value='7'>CECOSF 1</option>";
+                                                    echo "<option value='8'>CECOSF 2</option>";
+                                                    echo "<option value='9'>CECOSF 4</option>";
+                                                    echo "<option value='10' selected>BRUJULA Y LABORATORIO</option>";
+                                                    
+                                                    break;
+                                                case 41: 
+                                                    echo "<option value='0'>TODOS</option>";
+                                                    echo "<option value='1'>CESFAM 1</option>";
+                                                    echo "<option value='2'>CESFAM 2</option>";
+                                                    echo "<option value='3'>CESFAM 3</option>";
+                                                    echo "<option value='4'>CESFAM 4</option>";
+                                                    echo "<option value='41' selected>CESFAM 4B</option>";
                                                     echo "<option value='5'>CESFAM 5</option>";
                                                     echo "<option value='6'>CESFAM 6</option>";
                                                     echo "<option value='7'>CECOSF 1</option>";
