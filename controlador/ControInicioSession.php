@@ -24,6 +24,7 @@ if ($us == null) {
     $usEs = $us->estado;
     $usEdi = $us->editar;
     $usEli = $us->eliminar;
+    $usCen=$us->centro;
 
     session_start();
     $_SESSION["autenticado"] = "SI";
@@ -32,6 +33,7 @@ if ($us == null) {
     $_SESSION["estadoUser"]=$usEs;
     $_SESSION["editUser"]=$usEdi;
     $_SESSION["eliUser"]=$usEli;
+    $_SESSION["cenUser"]=$usCen;
     
     header("location: ../vista/portal.php");
 }
