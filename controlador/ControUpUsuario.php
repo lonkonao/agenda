@@ -9,6 +9,7 @@ $permiso = $_POST['permiso'];
 $estado = $_POST['estado'];
 $editar = $_POST['editar'];
 $eliminar = $_POST['eliminar'];
+$centro = $_POST['centro'];
 
 
 
@@ -16,6 +17,7 @@ $d = new Data();
 
 
 
-$d->upUser($id, $nombre, $permiso, $estado, $editar, $eliminar);
+$d->upUser($id, $nombre, $permiso, $estado, $editar, $eliminar, $centro);
+
 
 

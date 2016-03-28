@@ -113,7 +113,7 @@ class Data {
             echo" <span class = 'caret'></span>";
             echo" </button>";
             echo " <ul class = 'dropdown-menu' role = 'menu'>";
-            echo " <li><a href='user.php?id=" . $row[0] . "&user=" . $row[1] . "&per=" . $row[2] . "&es=" . $row[3] . "&ed=" . $row[4] . "&el=" . $row[5] . "'> Editar Usuario</a></li>";
+            echo " <li><a href='user.php?id=" . $row[0] . "&user=" . $row[1] . "&per=" . $row[2] . "&es=" . $row[3] . "&ed=" . $row[4] . "&el=" . $row[5] . "&cen=".$row[6]."'> Editar Usuario</a></li>";
             echo " <li><a onclick = Eliminar('$row[0]')> Eliminar</a></li>";
             echo " <li><a onclick = Pass('$row[0]','$row[1]')> Cambiar Contraseña</a></li>";
 
@@ -1091,8 +1091,8 @@ class Data {
         $this->c->ejecutar($sql);
     }
 
-    public function upUser($id, $user, $per, $es, $ed, $el) {
-        $sql = "UPDATE usuario set usuario='" . $user . "', permiso='" . $per . "', estado='" . $es . "', editar='" . $ed . "', eliminar='" . $el . "' where id='" . $id . "'";
+    public function upUser($id, $user, $per, $es, $ed, $el,$cen) {
+        $sql = "UPDATE usuario set usuario='" . $user . "', permiso='" . $per . "', estado='" . $es . "', editar='" . $ed . "', eliminar='" . $el . "', centro='" . $cen . "' where id='" . $id . "'";
 
 
         if (!$this->c->ejecutar($sql)) {
