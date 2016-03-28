@@ -44,12 +44,13 @@ class Data {
             $us->estado = $fila[4];
             $us->editar = $fila[5];
             $us->eliminar = $fila[6];
+            $us->centro = $fila[7];
         }
         return $us;
     }
 
     public function listaUsuario() {
-        $sql = "select u.id,u.usuario,p.nombre,es.nombre,ed.nombre,eli.nombre from usuario u,permiso p,estado es,editar ed, eliminar eli where eli.id = u.eliminar and ed.id = u.editar and es.id =u.estado and p.id =u.permiso";
+        $sql = "select u.id,u.usuario,p.nombre,es.nombre,ed.nombre,eli.nombre, u.centro from usuario u,permiso p,estado es,editar ed, eliminar eli where eli.id = u.eliminar and ed.id = u.editar and es.id =u.estado and p.id =u.permiso ";
         $res = $this->c->ejecutar($sql);
 
 
@@ -62,6 +63,7 @@ class Data {
         echo"            <th>ESTADO</th>";
         echo"            <th>EDITAR</th>";
         echo"            <th>ELIMINAR</th>";
+        echo"            <th>CENTRO</th>";
         echo "          <th>ACCIONES</th>";
         echo"      </tr>";
         echo"  </thead>";
@@ -75,6 +77,34 @@ class Data {
             echo"            <td>" . $row[3] . "</td>";
             echo"            <td>" . $row[4] . "</td>";
             echo"            <td>" . $row[5] . "</td>";
+
+            switch ($row[6]) {
+                case 0: echo"<td>TODOS</td>";
+                    break;
+                case 1: echo"<td>CESFAM 1</td>";
+                    break;
+                case 2: echo"<td>CESFAM 2</td>";
+                    break;
+                case 3: echo"<td>CESFAM 3</td>";
+                    break;
+                case 4: echo"<td>CESFAM 4</td>";
+                    break;
+                case 5: echo"<td>CESFAM 5</td>";
+                    break;
+                case 6: echo"<td>CESFAM 6</td>";
+                    break;
+                case 7: echo"<td>CECOSF 1</td>";
+                    break;
+                case 8: echo"<td>CECOSF 2</td>";
+                    break;
+                case 9: echo"<td>CECOSF 4</td>";
+                    break;
+                case 10: echo"<td>BRUJULA Y LABORATORIO</td>";
+                    break;
+
+            }
+
+
             echo"           <td>";
 
             echo"<div class='btn-group' role='group'>";
@@ -986,9 +1016,8 @@ class Data {
         }
         echo "</select>";
     }
-    
-    
-        public function comboAnexo() {
+
+    public function comboAnexo() {
 
         $sql = "select anexo from anexo";
 
@@ -1000,7 +1029,6 @@ class Data {
         }
         echo "</select>";
     }
-    
 
     //    
 //     
@@ -1062,18 +1090,18 @@ class Data {
         $sql = "UPDATE usuario set pass='" . $pass . "' where id='" . $id . "'";
         $this->c->ejecutar($sql);
     }
-    
-    public function upUser($id,$user,$per,$es,$ed,$el) {
+
+    public function upUser($id, $user, $per, $es, $ed, $el) {
         $sql = "UPDATE usuario set usuario='" . $user . "', permiso='" . $per . "', estado='" . $es . "', editar='" . $ed . "', eliminar='" . $el . "' where id='" . $id . "'";
-        
-        
+
+
         if (!$this->c->ejecutar($sql)) {
             echo '<script language="javascript">';
             echo 'alert("Error, No se Realizo la accion");location.href="../vista/portal.php"';
             echo '</script>';
         } else {
             echo '<script language="javascript">';
-            echo 'alert("El Usuario ('.$user.') Ha Sido Actualizado Correctamente"); location.href="../vista/portal.php"';
+            echo 'alert("El Usuario (' . $user . ') Ha Sido Actualizado Correctamente"); location.href="../vista/portal.php"';
             echo '</script>';
         }
     }

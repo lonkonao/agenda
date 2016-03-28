@@ -6,6 +6,7 @@ $p = $_SESSION["permisoUser"];
 $es = $_SESSION["estadoUser"];
 $e = $_SESSION["editUser"];
 $el = $_SESSION["eliUser"];
+$ce = $_SESSION["cenUser"];
 
 
 if ($p == 0) {
