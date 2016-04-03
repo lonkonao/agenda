@@ -12,7 +12,7 @@ if (!filter_var($ip, FILTER_VALIDATE_IP) === false) {
     $d->insertIP($ip);
     
     
-    header("location: google.cl");
+  
 } else {
 
    echo '<script language="text/javascript">';
