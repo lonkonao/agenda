@@ -344,18 +344,10 @@ if ($p == 0) {
                                             <div class="box-body">
                                                 <div class="form-group">
                                                     <div class="col-sm-10">
-                                                        <?php
-                                                                                                if (isset($_GET['i'])) {
-                                                                                                    $ipN= $_GET['i'];
-                                                                                                    echo "<input type='text' class='form-control' name='txtIP' value='".$ipN."' placeholder='Direccion IP' maxlength='15'>";
-                                                                                                    
-                                                                                                }else{
-                                                                                                    echo "<input type='text' class='form-control' name='txtIP'  placeholder='Direccion IP' maxlength='15'>";
-                                                                                                    
-                                                                                                }
-                                                        
-                                                        ?>
-                                                       
+
+                                                        <input type='text' class='form-control' name='txtIP'  placeholder='Direccion IP' maxlength='16'>
+
+
                                                     </div>
 
                                                 </div>
