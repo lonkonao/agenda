@@ -1,14 +1,11 @@
 <?php
 require '../modelo/Data.php';
-$centro = $_POST['txtCentro'];
-$dir = $_POST['txtDireccion'];
-$tele = $_POST['txtTelefono'];
+$anexo = $_POST['txtAnexo'];
+$num = $_POST['txtNumExt'];
+
 
 $d= new Data();
 
-$d->insertCentro($centro, $dir, $tele);
+$d->insertAnexo($anexo, $num);
 
 
-
-
-header("location:  ../vista/portal.php");
