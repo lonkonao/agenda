@@ -694,8 +694,8 @@ class Data {
 //    
 //  
 
-     public function insertIP($ip ) {
-        $sql = "insert into equipo values ('" . $ip . "','null','null','null','null','null')";
+     public function insertIP($ip) {
+        $sql = "insert into equipo values ('" . $ip . "',null,null,null,null,null)";
 
 
 
