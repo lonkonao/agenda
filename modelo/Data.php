@@ -702,7 +702,7 @@ class Data {
 
         if (!$this->c->ejecutar($sql)) {
             echo '<script language="javascript">';
-            echo 'alert("Error, No se Realizo la accion ");location.href="../vista/portal.php"';
+            echo 'alert("Error, No se Realizo la accion ");location.href="../vista/admin/mantenedor.php"';
             echo '</script>';
         } else {
             echo '<script language="javascript">';
