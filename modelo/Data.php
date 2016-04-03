@@ -26,6 +26,38 @@ class Data {
 //    
 //    
 //    
+    
+    public function listaIP() {
+
+        $sql = "select ip from equipo;";
+        $res = $this->c->ejecutar($sql);
+
+
+
+
+        echo"<div class='col-md-13'>";
+        echo"  <table id='table' border='1px'>";
+        echo"     <thead style='background-color: rgb(40, 96, 144); color: white;'>";
+        echo"        <tr>";
+        echo"           <th>IP INGRESADOS</th>";
+
+        echo"      </tr>";
+        echo"  </thead>";
+        echo"  <tbody>";
+
+        while ($row = $res->fetch_array()) {
+            echo"        <tr>";
+            echo"            <td>" . $row[0] . "</td>";
+
+            echo" </tr>";
+        }
+        echo" </tbody>";
+        echo" </table>";
+
+        echo '</div>';
+    }
+    
+    
     public function existeUsuario($usuario, $pass) {
 
         $sql = "select * from usuario "
@@ -662,6 +694,22 @@ class Data {
 //    
 //  
 
+     public function insertIP($ip ) {
+        $sql = "insert into equipo values ('" . $ip . "','null','null','null','null','null')";
+
+
+
+
+        if (!$this->c->ejecutar($sql)) {
+            echo '<script language="javascript">';
+            echo 'alert("Error, No se Realizo la accion ");location.href="../vista/portal.php"';
+            echo '</script>';
+        } else {
+            echo '<script language="javascript">';
+            echo 'alert("Registrado Correctamente"); location.href="../vista/portal.php"';
+            echo '</script>';
+        }
+    }
 
     public function insertEquipo($ip, $nombre, $box, $sector, $centro, $anexo) {
         $sql = "insert into equipo values ('" . $ip . "','" . $nombre . "','" . $box . "','" . $sector . "','" . $centro . "','" . $anexo . "')";
