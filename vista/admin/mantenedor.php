@@ -371,7 +371,7 @@ if ($p == 0) {
                                         <?php
                                         require_once '../../modelo/Data.php';
                                         $d = new Data();
-                                        $d->listaCentro();
+                                        $d->listaIP();
                                         ?>
                                     </div>
                                 </div><!-- /.box-body -->
