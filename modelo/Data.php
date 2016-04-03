@@ -27,6 +27,37 @@ class Data {
 //    
 //    
     
+     public function listaAnexo() {
+
+        $sql = "select anexo from anexo;";
+        $res = $this->c->ejecutar($sql);
+
+
+
+
+        echo"<div class='col-md-13'>";
+        echo"  <table id='table' border='1px'>";
+        echo"     <thead style='background-color: rgb(40, 96, 144); color: white;'>";
+        echo"        <tr>";
+        echo"           <th>ANEXOS INGRESADOS</th>";
+
+        echo"      </tr>";
+        echo"  </thead>";
+        echo"  <tbody>";
+
+        while ($row = $res->fetch_array()) {
+            echo"        <tr>";
+            echo"            <td>" . $row[0] . "</td>";
+
+            echo" </tr>";
+        }
+        echo" </tbody>";
+        echo" </table>";
+
+        echo '</div>';
+    }
+    
+    
     public function listaIP() {
 
         $sql = "select ip from equipo;";
