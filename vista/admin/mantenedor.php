@@ -385,18 +385,14 @@ if ($p == 0) {
 
                                     <div class="col-xs-6">
                                         <!-- form start -->
-                                        <form class="form-horizontal" method="POST" action="../../controlador/ControCentro.php">
+                                        <form class="form-horizontal" method="POST" action="../../controlador/ControAnexo.php">
                                             <div class="box-body">
                                                 <div class="form-group">
                                                     <div class="col-sm-10">
-                                                        <input type="text" class="form-control" name="txtCentro" placeholder="Centro">
+                                                        <input type="number" class="form-control" name="txtAnexo" placeholder="Anexo">
+                                                        <input type="number" class="form-control" name="txtNumExt" placeholder="Numero Externo">
                                                     </div>
-                                                    <div class="col-sm-10">
-                                                        <input type="text" class="form-control" name="txtDireccion" placeholder="Direccion">
-                                                    </div>
-                                                    <div class="col-sm-10">
-                                                        <input type="tel" class="form-control" name="txtTelefono" placeholder="Telefono">
-                                                    </div>
+
                                                 </div>
 
                                             </div><!-- /.box-body -->
@@ -409,7 +405,7 @@ if ($p == 0) {
                                         <?php
                                         require_once '../../modelo/Data.php';
                                         $d = new Data();
-                                        $d->listaCentro();
+                                        $d->listaAnexo();
                                         ?>
                                     </div>
                                 </div><!-- /.box-body -->
