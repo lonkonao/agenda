@@ -19,7 +19,7 @@ if ($p == 0) {
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Mantenedor-Funcionario</title>
+        <title>Mantenedor-Funcionario Pc</title>
         <!-- Tell the browser to be responsive to screen width -->
         <script type='text/javascript' src='../../js/jquery-1.7.1.min.js'></script>
         <link rel="stylesheet" href="../../css/cargador.css">
