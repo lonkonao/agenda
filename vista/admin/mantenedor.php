@@ -47,7 +47,7 @@ if ($p == 0) {
         <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker-bs3.css">
         <!-- bootstrap wysihtml5 - text editor -->
         <link rel="stylesheet" href="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-
+         <link rel="stylesheet" href="../../css/fakeLoader.css">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -152,6 +152,20 @@ if ($p == 0) {
 
 
                 <div id='contenido'>
+                    <div class="fakeloader">
+
+                        <script>
+                            $(document).ready(function () {
+                                $(".fakeloader").fakeLoader({
+                                    timeToHide: 1200,
+                                    bgColor: "#ffffff",
+                                    zIndex:"10",
+                                    spinner: "spinner1",
+                                    imagePath: "../../imag/Preloader_3.gif"
+                                });
+                            });
+                        </script>
+                    </div>
                     <div class="row" style="margin-left: 20px;margin-top:10px">
 
                         <div class="col-md-8">
@@ -495,5 +509,6 @@ if ($p == 0) {
         <script src="../../dist/js/pages/dashboard.js"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="../../dist/js/demo.js"></script>
+         <script src="../../js/fakeLoader.min.js"></script>
     </body>
 </html>

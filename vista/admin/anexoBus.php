@@ -174,6 +174,25 @@ if ($p == 0) {
                                 <h3 class="box-title">Anexos</h3>
                             </div><!-- /.box-header -->
                             <div class="box-body table-responsive no-padding">
+                                <script type='text/javascript' charset='utf-8'>
+                                    $(document).ready(function () {
+                                        $('#datatables').dataTable({
+                                            'oLanguage': {
+                                                'sLengthMenu': 'Mostrar _MENU_ Anexos por página',
+                                                'sSearch': 'Buscar',
+                                                'sEmptyTable': 'Vacio',
+                                                'sZeroRecords': 'Sin Resultados',
+                                                'oPaginate': {
+                                                    'sLast': 'Última página',
+                                                    'sFirst': 'Primera',
+                                                    'sNext': 'Siguiente',
+                                                    'sPrevious': 'Anterior'
+                                                },
+                                                'sInfo': 'Hay _TOTAL_ Anexos. Mostrando de (_START_ a _END_)',
+                                            }
+                                        })
+                                    })
+                                </script> 
 
                                 <?php
                                 require_once '../../modelo/Data.php';

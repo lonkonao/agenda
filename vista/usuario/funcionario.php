@@ -33,7 +33,7 @@
         <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker-bs3.css">
         <!-- bootstrap wysihtml5 - text editor -->
         <link rel="stylesheet" href="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-
+         <link rel="stylesheet" href="../../css/fakeLoader.css">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -119,7 +119,7 @@
                 <section class="content-header"> <!-- nombre pagina y breadcrumb -->
                     <h1>
                         Portal
-                        <small>Inicio</small>
+                        <small>Funcionarios</small>
                     </h1>
                     
                 </section>
@@ -127,7 +127,20 @@
 
                 <!-- Main content -->
                 
-                
+                <div class="fakeloader">
+
+                        <script>
+                            $(document).ready(function () {
+                                $(".fakeloader").fakeLoader({
+                                    timeToHide: 1200,
+                                    bgColor: "#ffffff",
+                                    zIndex:"10",
+                                    spinner: "spinner1",
+                                    imagePath: "../../imag/Preloader_3.gif"
+                                });
+                            });
+                        </script>
+                    </div>
                 <div class="row">
                     <div class="col-xs-12">
                         <!-- /.box -->
@@ -224,5 +237,6 @@
             <script src="../../dist/js/pages/dashboard.js"></script>
             <!-- AdminLTE for demo purposes -->
             <script src="../../dist/js/demo.js"></script>
+             <script src="../../js/fakeLoader.min.js"></script>
     </body>
 </html>

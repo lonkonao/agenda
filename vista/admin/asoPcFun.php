@@ -48,7 +48,7 @@ if ($p == 0) {
         <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker-bs3.css">
         <!-- bootstrap wysihtml5 - text editor -->
         <link rel="stylesheet" href="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-
+        <link rel="stylesheet" href="../../css/fakeLoader.css">
         <link rel="stylesheet" href="../../plugins/select2/select2.min.css">
 
 
@@ -160,7 +160,7 @@ if ($p == 0) {
                         <script>
                             $(document).ready(function () {
                                 $(".fakeloader").fakeLoader({
-                                    timeToHide: 1200,
+                                    timeToHide: 1000,
                                     bgColor: "#ffffff",
                                     zIndex:"10",
                                     spinner: "spinner1",

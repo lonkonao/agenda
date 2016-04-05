@@ -35,7 +35,7 @@
         <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker-bs3.css">
         <!-- bootstrap wysihtml5 - text editor -->
         <link rel="stylesheet" href="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-
+        <link rel="stylesheet" href="../../css/fakeLoader.css">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -120,14 +120,27 @@
                 <section class="content-header"> <!-- nombre pagina y breadcrumb -->
                     <h1>
                         Portal
-                        <small>Inicio</small>
+                        <small>Anexos</small>
                     </h1>
 
                 </section>
 
 
                 <!-- Main content -->
+                <div class="fakeloader">
 
+                    <script>
+                        $(document).ready(function () {
+                            $(".fakeloader").fakeLoader({
+                                timeToHide: 1200,
+                                bgColor: "#ffffff",
+                                zIndex: "10",
+                                spinner: "spinner1",
+                                imagePath: "../../imag/Preloader_3.gif"
+                            });
+                        });
+                    </script>
+                </div>
 
                 <div class="row">
                     <div class="col-xs-12">
@@ -140,21 +153,21 @@
                             <div class="box-body table-responsive no-padding">
                                 <script type='text/javascript' charset='utf-8'>
                                     $(document).ready(function () {
-                                    $('#datatables').dataTable({
+                                        $('#datatables').dataTable({
                                             'oLanguage': {
-                                            'sLengthMenu': 'Mostrar _MENU_ Anexos por página',
-                                                    'sSearch': 'Buscar',
-                                                    'sEmptyTable': 'Vacio',
-                                                    'sZeroRecords': 'Sin Resultados',
-                                                    'oPaginate': {
+                                                'sLengthMenu': 'Mostrar _MENU_ Anexos por página',
+                                                'sSearch': 'Buscar',
+                                                'sEmptyTable': 'Vacio',
+                                                'sZeroRecords': 'Sin Resultados',
+                                                'oPaginate': {
                                                     'sLast': 'Última página',
-                                                            'sFirst': 'Primera',
-                                                            'sNext': 'Siguiente',
-                                                            'sPrevious': 'Anterior'
-                                                    },
-                                                    'sInfo': 'Hay _TOTAL_ Anexos. Mostrando de (_START_ a _END_)',
+                                                    'sFirst': 'Primera',
+                                                    'sNext': 'Siguiente',
+                                                    'sPrevious': 'Anterior'
+                                                },
+                                                'sInfo': 'Hay _TOTAL_ Anexos. Mostrando de (_START_ a _END_)',
                                             }
-                                    })
+                                        })
                                     })
                                 </script> 
                                 <?php
@@ -259,5 +272,6 @@
         <script src="../../dist/js/pages/dashboard.js"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="../../dist/js/demo.js"></script>
+        <script src="../../js/fakeLoader.min.js"></script>
     </body>
 </html>
