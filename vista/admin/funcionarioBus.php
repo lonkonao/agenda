@@ -140,8 +140,8 @@ if ($p == 0) {
                 <!-- Content Header (Page header) -->
                 <section class="content-header"> <!-- nombre pagina y breadcrumb -->
                     <h1>
-                        Portal
-                        <small>Inicio</small>
+                        Buscador
+                        <small>Funcionarios</small>
                     </h1>
                     
                 </section>

@@ -128,7 +128,7 @@ if ($p == 0) {
                                 }
                                 if ($p == 0) {
 
-                                    echo" <li><a href='#'><i class='fa fa-user-md'></i>Usuarios</a></li> ";
+                                    echo" <li><a href='user.php'><i class='fa fa-user-md'></i>Usuarios</a></li> ";
                                 }
                                 ?>
                             </ul>
