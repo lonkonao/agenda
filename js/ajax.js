@@ -64,6 +64,23 @@ function Eliminar(id) {
     }
 
 }
+function Desasociar(id) {
+    if (confirm("En realidad deseas Desasociar?")) {
+        ajax = objetoAjax();
+        ajax.open("POST", "../../controlador/ControFunEqEli.php", true);
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState == 4) {
+                alert('El registro fue eliminado con exito!');
+                window.location.reload(true);
+            }
+        }
+        ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        ajax.send("id=" + id)
+    } else {
+        //Sin acciones
+    }
+
+}
 
 
 
