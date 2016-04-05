@@ -972,6 +972,7 @@ class Data {
         }
         echo "</select>";
     }
+    
 
     public function comboEstamento() {
 
@@ -1050,6 +1051,18 @@ class Data {
         while ($resultado = $res->fetch_array()) {
 
             echo "<option value='" . $resultado[0] . "'> " . $resultado[1] . " " . $resultado[2] . "</option>";
+        }
+        echo "</select>";
+    }
+    public function comboIp() {
+
+        $sql = "select ip from equipo WHERE nombre<> 'null'";
+
+        $res = $this->c->ejecutar($sql);
+        echo "<select id = 'comboIP' name='comboIP' class='form-control'>";
+        while ($resultado = $res->fetch_array()) {
+
+            echo "<option value='" . $resultado[0] . "'> " . $resultado[0] . "</option>";
         }
         echo "</select>";
     }

@@ -48,6 +48,8 @@ if ($p == 0) {
         <!-- bootstrap wysihtml5 - text editor -->
         <link rel="stylesheet" href="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
+        <link rel="stylesheet" href="../../plugins/select2/select2.min.css">
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -152,327 +154,41 @@ if ($p == 0) {
 
                 <div id='contenido'>
 
-                    
                     <div class="row" style="margin-left: 10px;margin-top:10px">
                         <div class="col-md-11">
                             <div class="box box-warning ">
                                 <div class="box-header with-border">
-                                    <h3 class="box-title">Usuarios</h3>
+                                    <h3 class="box-title">Funcionario Pc</h3>
 
                                 </div><!-- /.box-header -->
                                 <div class="box-body">
                                     <div class="col-xs-4" style="border:1px solid #f4f4f4;">
-                                        <!-- form start -->
+                                        <form action="" method="POST">
+                                            <?php
+                                            $d = new Data();
+                                            
+                                            $d->comboIp();
+                                            $d->comboFuncionario();
+                                            
+                                            
+                                            ?>
+                                            
+                                        </form>
 
-                                        <?php
-                                        require_once '../../modelo/Data.php';
-                                        $d = new Data();
-                                        if (isset($_GET['id'])) {
-                                            $id = $_GET['id'];
-                                            $user = $_GET['user'];
-                                            $per = $_GET['per'];
-                                            $es = $_GET['es'];
-                                            $ed = $_GET['ed'];
-                                            $el = $_GET['el'];
-                                            $cen = $_GET['cen'];
-
-
-
-                                            echo"   <form class = 'form-horizontal' method = 'POST' action = '../../controlador/ControUpUsuario.php?id=" . $id . "'>";
-                                            echo"  <div class = 'box-body'>";
-                                            echo"  <div class = 'form-group'>";
-                                            echo"  <div class = 'col-sm-10'>";
-                                            echo"  <label>Nombre Usuario</label>";
-                                            echo"  <input type = 'text' class = 'form-control' name = 'txtNombre' value='" . $user . "'>";
-                                            echo"  </div>";
-
-                                            echo"  <div class = 'col-sm-10'>";
-                                            echo"  <label>Permiso Usuario</label>";
-                                            $d->comboPermisoF($per);
-                                            echo"  </div>";
-                                            echo"  <div class = 'col-sm-10'>";
-                                            echo"  <label>Estado Usuario</label>";
-                                            $d->comboEstadof($es);
-                                            echo"  </div>";
-
-                                            echo"  <div class = 'col-sm-10'>";
-                                            echo"  <label>Permiso Editar</label>";
-                                            $d->comboEditarF($ed);
-                                            echo"  </div>";
-                                            echo"  <div class = 'col-sm-10'>";
-                                            echo"  <label>Permiso Eliminar</label>";
-                                            $d->comboEliminarF($el);
-                                            echo"  </div>";
-                                            echo"  <div class = 'col-sm-10'>";
-                                            echo"  <label>Centro</label>";
-                                            echo "<select id='centro' name='centro' class='form-control'>";
-                                            switch ($cen) {
-                                                case 0: 
-                                                    echo "<option value='0' selected >TODOS</option>";
-                                                    echo "<option value='1'>CESFAM 1</option>";
-                                                    echo "<option value='2'>CESFAM 2</option>";
-                                                    echo "<option value='3'>CESFAM 3</option>";
-                                                    echo "<option value='4'>CESFAM 4</option>";
-                                                    echo "<option value='41'>CESFAM 4B</option>";
-                                                    echo "<option value='5'>CESFAM 5</option>";
-                                                    echo "<option value='6'>CESFAM 6</option>";
-                                                    echo "<option value='7'>CECOSF 1</option>";
-                                                    echo "<option value='8'>CECOSF 2</option>";
-                                                    echo "<option value='9'>CECOSF 4</option>";
-                                                    
-                                                    echo "<option value='10'>BRUJULA Y LABORATORIO</option>";
-                                                    
-                                                    break;
-                                                case 1: 
-                                                   echo "<option value='0'>TODOS</option>";
-                                                    echo "<option value='1' selected >CESFAM 1</option>";
-                                                    echo "<option value='2'>CESFAM 2</option>";
-                                                    echo "<option value='3'>CESFAM 3</option>";
-                                                    echo "<option value='4'>CESFAM 4</option>";
-                                                     echo "<option value='41'>CESFAM 4B</option>";
-                                                    echo "<option value='5'>CESFAM 5</option>";
-                                                    echo "<option value='6'>CESFAM 6</option>";
-                                                    echo "<option value='7'>CECOSF 1</option>";
-                                                    echo "<option value='8'>CECOSF 2</option>";
-                                                    echo "<option value='9'>CECOSF 4</option>";
-                                                    echo "<option value='10'>BRUJULA Y LABORATORIO</option>";
-                                                    
-                                                    break;
-                                                case 2: 
-                                                   echo "<option value='0'>TODOS</option>";
-                                                    echo "<option value='1'>CESFAM 1</option>";
-                                                    echo "<option value='2' selected >CESFAM 2</option>";
-                                                    echo "<option value='3'>CESFAM 3</option>";
-                                                    echo "<option value='4'>CESFAM 4</option>";
-                                                     echo "<option value='41'>CESFAM 4B</option>";
-                                                    echo "<option value='5'>CESFAM 5</option>";
-                                                    echo "<option value='6'>CESFAM 6</option>";
-                                                    echo "<option value='7'>CECOSF 1</option>";
-                                                    echo "<option value='8'>CECOSF 2</option>";
-                                                    echo "<option value='9'>CECOSF 4</option>";
-                                                    echo "<option value='10'>BRUJULA Y LABORATORIO</option>";
-                                                    
-                                                    break;
-                                                case 3: 
-                                                    echo "<option value='0'>TODOS</option>";
-                                                    echo "<option value='1'>CESFAM 1</option>";
-                                                    echo "<option value='2'>CESFAM 2</option>";
-                                                    echo "<option value='3' selected >CESFAM 3</option>";
-                                                    echo "<option value='4'>CESFAM 4</option>";
-                                                     echo "<option value='41'>CESFAM 4B</option>";
-                                                    echo "<option value='5'>CESFAM 5</option>";
-                                                    echo "<option value='6'>CESFAM 6</option>";
-                                                    echo "<option value='7'>CECOSF 1</option>";
-                                                    echo "<option value='8'>CECOSF 2</option>";
-                                                    echo "<option value='9'>CECOSF 4</option>";
-                                                    echo "<option value='10'>BRUJULA Y LABORATORIO</option>";
-                                                    
-                                                    break;
-                                                case 4: 
-                                                    echo "<option value='0'>TODOS</option>";
-                                                    echo "<option value='1'>CESFAM 1</option>";
-                                                    echo "<option value='2'>CESFAM 2</option>";
-                                                    echo "<option value='3'>CESFAM 3</option>";
-                                                    echo "<option value='4' selected >CESFAM 4</option>";
-                                                     echo "<option value='41'>CESFAM 4B</option>";
-                                                    echo "<option value='5'>CESFAM 5</option>";
-                                                    echo "<option value='6'>CESFAM 6</option>";
-                                                    echo "<option value='7'>CECOSF 1</option>";
-                                                    echo "<option value='8'>CECOSF 2</option>";
-                                                    echo "<option value='9'>CECOSF 4</option>";
-                                                    echo "<option value='10'>BRUJULA Y LABORATORIO</option>";
-                                                    
-                                                    break;
-                                                case 5: 
-                                                    echo "<option value='0'>TODOS</option>";
-                                                    echo "<option value='1'>CESFAM 1</option>";
-                                                    echo "<option value='2'>CESFAM 2</option>";
-                                                    echo "<option value='3'>CESFAM 3</option>";
-                                                    echo "<option value='4'  >CESFAM 4</option>";
-                                                     echo "<option value='41'>CESFAM 4B</option>";
-                                                    echo "<option value='5' selected>CESFAM 5</option>";
-                                                    echo "<option value='6'>CESFAM 6</option>";
-                                                    echo "<option value='7'>CECOSF 1</option>";
-                                                    echo "<option value='8'>CECOSF 2</option>";
-                                                    echo "<option value='9'>CECOSF 4</option>";
-                                                    echo "<option value='10'>BRUJULA Y LABORATORIO</option>";
-                                                    
-                                                    break;
-                                                case 6: 
-                                                    echo "<option value='0'>TODOS</option>";
-                                                    echo "<option value='1'>CESFAM 1</option>";
-                                                    echo "<option value='2'>CESFAM 2</option>";
-                                                    echo "<option value='3'>CESFAM 3</option>";
-                                                    echo "<option value='4'>CESFAM 4</option>";
-                                                    echo "<option value='41'>CESFAM 4B</option>";
-                                                    echo "<option value='5'>CESFAM 5</option>";
-                                                    echo "<option value='6' selected >CESFAM 6</option>";
-                                                    echo "<option value='7'>CECOSF 1</option>";
-                                                    echo "<option value='8'>CECOSF 2</option>";
-                                                    echo "<option value='9'>CECOSF 4</option>";
-                                                    echo "<option value='10'>BRUJULA Y LABORATORIO</option>";
-                                                    
-                                                    break;
-                                                case 7: 
-                                                    echo "<option value='0'>TODOS</option>";
-                                                    echo "<option value='1'>CESFAM 1</option>";
-                                                    echo "<option value='2'>CESFAM 2</option>";
-                                                    echo "<option value='3'>CESFAM 3</option>";
-                                                    echo "<option value='4'>CESFAM 4</option>";
-                                                    echo "<option value='41'>CESFAM 4B</option>";
-                                                    echo "<option value='5'>CESFAM 5</option>";
-                                                    echo "<option value='6'>CESFAM 6</option>";
-                                                    echo "<option value='7' selected >CECOSF 1</option>";
-                                                    echo "<option value='8'>CECOSF 2</option>";
-                                                    echo "<option value='9'>CECOSF 4</option>";
-                                                    echo "<option value='10'>BRUJULA Y LABORATORIO</option>";
-                                                    
-                                                    break;
-                                                case 8: 
-                                                    echo "<option value='0'>TODOS</option>";
-                                                    echo "<option value='1'>CESFAM 1</option>";
-                                                    echo "<option value='2'>CESFAM 2</option>";
-                                                    echo "<option value='3'>CESFAM 3</option>";
-                                                    echo "<option value='4'>CESFAM 4</option>";
-                                                    echo "<option value='41'>CESFAM 4B</option>";
-                                                    echo "<option value='5'>CESFAM 5</option>";
-                                                    echo "<option value='6'>CESFAM 6</option>";
-                                                    echo "<option value='7'>CECOSF 1</option>";
-                                                    echo "<option value='8' selected >CECOSF 2</option>";
-                                                    echo "<option value='9'>CECOSF 4</option>";
-                                                    echo "<option value='10'>BRUJULA Y LABORATORIO</option>";
-                                                    
-                                                    break;
-                                                case 9: 
-                                                    echo "<option value='0'>TODOS</option>";
-                                                    echo "<option value='1'>CESFAM 1</option>";
-                                                    echo "<option value='2'>CESFAM 2</option>";
-                                                    echo "<option value='3'>CESFAM 3</option>";
-                                                    echo "<option value='4'>CESFAM 4</option>";
-                                                    echo "<option value='41'>CESFAM 4B</option>";
-                                                    echo "<option value='5'>CESFAM 5</option>";
-                                                    echo "<option value='6'>CESFAM 6</option>";
-                                                    echo "<option value='7'>CECOSF 1</option>";
-                                                    echo "<option value='8'>CECOSF 2</option>";
-                                                    echo "<option value='9' selected >CECOSF 4</option>";
-                                                    echo "<option value='10'>BRUJULA Y LABORATORIO</option>";
-                                                    
-                                                    break;
-                                                case 10: 
-                                                    echo "<option value='0'>TODOS</option>";
-                                                    echo "<option value='1'>CESFAM 1</option>";
-                                                    echo "<option value='2'>CESFAM 2</option>";
-                                                    echo "<option value='3'>CESFAM 3</option>";
-                                                    echo "<option value='4'>CESFAM 4</option>";
-                                                    echo "<option value='41'>CESFAM 4B</option>";
-                                                    echo "<option value='5'>CESFAM 5</option>";
-                                                    echo "<option value='6'>CESFAM 6</option>";
-                                                    echo "<option value='7'>CECOSF 1</option>";
-                                                    echo "<option value='8'>CECOSF 2</option>";
-                                                    echo "<option value='9'>CECOSF 4</option>";
-                                                    echo "<option value='10' selected>BRUJULA Y LABORATORIO</option>";
-                                                    
-                                                    break;
-                                                case 41: 
-                                                    echo "<option value='0'>TODOS</option>";
-                                                    echo "<option value='1'>CESFAM 1</option>";
-                                                    echo "<option value='2'>CESFAM 2</option>";
-                                                    echo "<option value='3'>CESFAM 3</option>";
-                                                    echo "<option value='4'>CESFAM 4</option>";
-                                                    echo "<option value='41' selected>CESFAM 4B</option>";
-                                                    echo "<option value='5'>CESFAM 5</option>";
-                                                    echo "<option value='6'>CESFAM 6</option>";
-                                                    echo "<option value='7'>CECOSF 1</option>";
-                                                    echo "<option value='8'>CECOSF 2</option>";
-                                                    echo "<option value='9'>CECOSF 4</option>";
-                                                    echo "<option value='10' selected>BRUJULA Y LABORATORIO</option>";
-                                                    
-                                                    break;
-                                            }
-                                            echo "</select>";
-                                            echo"  </div>";
-
-
-
-                                            echo"  </div>";
-
-                                            echo" </div><!--/.box-body -->";
-                                            echo" <div class = 'box-footer'>";
-                                            echo"     <button type = 'submit' class = 'btn btn-info pull-right'>Guardar</button>";
-                                            echo" </div>";
-                                            echo" </form";
-                                        } else {
-
-                                            echo"   <form class = 'form-horizontal' method = 'POST' action = '../../controlador/ControUsuario.php'>";
-                                            echo"  <div class = 'box-body'>";
-                                            echo"  <div class = 'form-group'>";
-                                            echo"  <div class = 'col-sm-10'>";
-                                            echo"  <label>Nombre Usuario</label>";
-                                            echo"  <input type = 'text' class = 'form-control' name = 'txtNombre'>";
-                                            echo"  </div>";
-                                            echo"  <div class = 'col-sm-10'>";
-                                            echo"  <label>Contraseña</label>";
-                                            echo"  <input type = 'password' class = 'form-control' name = 'txtPass'>";
-                                            echo"  </div>";
-                                            echo"  <div class = 'col-sm-10'>";
-                                            echo"  <label>Permiso Usuario</label>";
-                                            $d->comboPermiso();
-                                            echo"  </div>";
-                                            echo"  <div class = 'col-sm-10'>";
-                                            echo"  <label>Estado Usuario</label>";
-                                            $d->comboEstado();
-                                            echo"  </div>";
-                                            echo"  <div class = 'col-sm-10'>";
-                                            echo"  <label>Permiso Editar</label>";
-                                            $d->comboEditar();
-                                            echo"  </div>";
-                                            echo"  <div class = 'col-sm-10'>";
-                                            echo"  <label>Permiso Eliminar</label>";
-                                            $d->comboEliminar();
-                                            echo"  </div>";
-                                            echo"  <div class = 'col-sm-10'>";
-                                            echo"  <label>Centro</label>";
-                                            echo "<select id='centro' name='centro' class='form-control'>";
-                                            echo "<option value='0'>TODOS</option>";
-                                            echo "<option value='1'>CESFAM 1</option>";
-                                            echo "<option value='2'>CESFAM 2</option>";
-                                            echo "<option value='3'>CESFAM 3</option>";
-                                            echo "<option value='4'>CESFAM 4</option>";
-                                            echo "<option value='5'>CESFAM 5</option>";
-                                            echo "<option value='6'>CESFAM 6</option>";
-                                            echo "<option value='7'>CECOSF 1</option>";
-                                            echo "<option value='8'>CECOSF 2</option>";
-                                            echo "<option value='9'>CECOSF 4</option>";
-                                            echo "<option value='10'>BRUJULA Y LABORATORIO</option>";
-                                            echo "</select>";
-                                            echo"  </div>";
-
-
-
-                                            echo"  </div>";
-
-                                            echo" </div><!--/.box-body -->";
-                                            echo" <div class = 'box-footer'>";
-                                            echo"     <button type = 'submit' class = 'btn btn-info pull-right'>Guardar</button>";
-                                            echo" </div>";
-                                            echo" </form";
-                                        }
-                                        echo" </div>";
-                                        ?>
-                                    </div>
-                                    <div class = "col-xs-6">
-                                        <?php
-                                        $d->listaUsuario();
-                                        ?>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
+                    </div>
+                    <div class = "col-xs-6">
+                        <?php
+                        require_once '../../modelo/Data.php';
+                        $d = new Data();
+                        $d->listaUsuario();
+                        ?>
                     </div>
                 </div>
             </div>
-
             <!-- /.content -->
         </div><!-- /.content-wrapper -->
 
@@ -569,6 +285,7 @@ if ($p == 0) {
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
         <script src="../../dist/js/pages/dashboard.js"></script>
         <!-- AdminLTE for demo purposes -->
+        <script src="../../plugins/select2/select2.full.min.js"></script>
         <script src="../../dist/js/demo.js"></script>
     </body>
 </html>
