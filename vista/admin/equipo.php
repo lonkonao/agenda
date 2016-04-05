@@ -54,7 +54,17 @@ if ($p == 0) {
             <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-
+<script>
+                        $(document).ready(function () {
+                            $(".fakeloader").fakeLoader({
+                                timeToHide: 1000,
+                                bgColor: "#ffffff",
+                                zIndex: "10",
+                                spinner: "spinner1",
+                                imagePath: "../../imag/Preloader_3.gif"
+                            });
+                        });
+                    </script>
 
 
 
@@ -153,20 +163,10 @@ if ($p == 0) {
                 <div id='contenido'>
                                 <div class="fakeloader">
 
-                    <script>
-                        $(document).ready(function () {
-                            $(".fakeloader").fakeLoader({
-                                timeToHide: 1000,
-                                bgColor: "#ffffff",
-                                zIndex: "10",
-                                spinner: "spinner1",
-                                imagePath: "../../imag/Preloader_3.gif"
-                            });
-                        });
-                    </script>
+                    
                 </div>
 
-                    <div class="row" style="margin-left: 10px;margin-top:10px">
+                    <div class="row" style="margin-top:10px">
                         <div class="col-md-12" style="width: 99%;">
                             <div class="box box-warning ">
                                 <div class="box-header with-border">
