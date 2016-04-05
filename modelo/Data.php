@@ -26,8 +26,8 @@ class Data {
 //    
 //    
 //    
-    
-     public function listaAnexo() {
+
+    public function listaAnexo() {
 
         $sql = "select anexo from anexo;";
         $res = $this->c->ejecutar($sql);
@@ -56,8 +56,7 @@ class Data {
 
         echo '</div>';
     }
-    
-    
+
     public function listaIP() {
 
         $sql = "select ip from equipo;";
@@ -87,8 +86,7 @@ class Data {
 
         echo '</div>';
     }
-    
-    
+
     public function existeUsuario($usuario, $pass) {
 
         $sql = "select * from usuario "
@@ -166,7 +164,6 @@ class Data {
                     break;
                 case 41: echo"<td>CESFAM 4B</td>";
                     break;
-
             }
 
 
@@ -178,7 +175,7 @@ class Data {
             echo" <span class = 'caret'></span>";
             echo" </button>";
             echo " <ul class = 'dropdown-menu' role = 'menu'>";
-            echo " <li><a href='user.php?id=" . $row[0] . "&user=" . $row[1] . "&per=" . $row[2] . "&es=" . $row[3] . "&ed=" . $row[4] . "&el=" . $row[5] . "&cen=".$row[6]."'> Editar Usuario</a></li>";
+            echo " <li><a href='user.php?id=" . $row[0] . "&user=" . $row[1] . "&per=" . $row[2] . "&es=" . $row[3] . "&ed=" . $row[4] . "&el=" . $row[5] . "&cen=" . $row[6] . "'> Editar Usuario</a></li>";
             echo " <li><a onclick = Eliminar('$row[0]')> Eliminar</a></li>";
             echo " <li><a onclick = Pass('$row[0]','$row[1]')> Cambiar Contraseña</a></li>";
 
@@ -249,6 +246,7 @@ class Data {
 
         echo '</div>';
     }
+
     public function listaFunEqu() {
 
         $sql = "select f.nombre,f.apellidoP,e.nombre,fp.equipo, eq.anexo FROM"
@@ -256,7 +254,7 @@ class Data {
                 . " fp.funcionario = f.id and f.estamento = e.id and fp.equipo = eq.ip ";
         $res = $this->c->ejecutar($sql);
 
-        
+
         echo" <script type='text/javascript' charset='utf-8'>";
         echo"   $(document).ready(function () {";
         echo"       $('#datatables').dataTable({";
@@ -310,7 +308,7 @@ class Data {
             echo" <span class = 'caret'></span>";
             echo" </button>";
             echo " <ul class = 'dropdown-menu' role = 'menu'>";
-            echo " <li><a href='equipo.php?ip=" . $row[0] . "&nombre=" . $row[1] . "&box=" . $row[2] . "&sector=" . $row[3] . "&centro=" . $row[4] . "&anexo=" . $row[5] . "&numero=" . $row[6] . "&funcionario=" . $row[7] . "'> Actualizar</a></li>";
+            echo " <li><a onclick = Desasociar('$row[3]')> Desasociar</a></li>";
             echo "</td>";
             echo" </tr>";
         }
@@ -319,12 +317,13 @@ class Data {
 
         echo '</div>';
     }
+
     public function listaEquipoF($ce) {
 
         $sql = "SELECT e.ip,e.nombre,b.nombre,s.nombre,c.nombre,a.anexo,a.numeroExterno,f.nombre,f.apellidoP "
                 . "from equipo e, box b, sector s, centro c,anexo a,funcionarioPc fp, funcionario f "
                 . "WHERE b.id=e.box and s.id =e.sector and c.id = e.centro and a.anexo = e.anexo and "
-                . "fp.equipo = e.ip and fp.funcionario = f.id and c.id = '".$ce."' ";
+                . "fp.equipo = e.ip and fp.funcionario = f.id and c.id = '" . $ce . "' ";
         $res = $this->c->ejecutar($sql);
 
 
@@ -373,7 +372,6 @@ class Data {
 
         echo '</div>';
     }
-
 
     public function listaFuncio() {
 
@@ -795,7 +793,7 @@ class Data {
 //    
 //  
 
-     public function insertIP($ip) {
+    public function insertIP($ip) {
         $sql = "insert into equipo values ('" . $ip . "',null,null,null,null,null)";
 
 
@@ -915,8 +913,15 @@ class Data {
 
     public function insertFuncioPc($funcionario, $equipo) {
         $sql = "insert into funcionarioPc values (null,'" . $funcionario . "','" . $equipo . "')";
-
-        $this->c->ejecutar($sql);
+        if (!$this->c->ejecutar($sql)) {
+            echo '<script language="javascript">';
+            echo 'alert("Error, No se Realizo la accion");location.href="../vista/portal.php"';
+            echo '</script>';
+        } else {
+            echo '<script language="javascript">';
+            echo 'alert("Registrado Correctamente"); location.href="../vista/portal.php"';
+            echo '</script>';
+        }
     }
 
     public function insertUsuario($nombre, $pass, $permiso, $estado, $editar, $eliminar) {
@@ -976,8 +981,9 @@ class Data {
                 echo "<option value='" . $resultado[0] . "'> " . $resultado[1] . "</option>";
             }
         }
-         echo "</select>";
+        echo "</select>";
     }
+
     public function comboCentroF($nombre) {
 
         $sql = "select id,nombre from centro ";
@@ -991,7 +997,7 @@ class Data {
                 echo "<option value='" . $resultado[0] . "'> " . $resultado[1] . "</option>";
             }
         }
-         echo "</select>";
+        echo "</select>";
     }
 
     public function comboSectorF($nombre) {
@@ -1025,7 +1031,6 @@ class Data {
         }
         echo "</select>";
     }
-    
 
     public function comboFuncionarioF($nombre) {
 
@@ -1042,7 +1047,6 @@ class Data {
         }
         echo "</select>";
     }
-    
 
     public function comboEstamento() {
 
@@ -1124,6 +1128,7 @@ class Data {
         }
         echo "</select>";
     }
+
     public function comboIpMasAnex() {
 
         $sql = "select ip,anexo from equipo WHERE nombre<> 'null'";
@@ -1255,7 +1260,7 @@ class Data {
 
     public function comboAnexo($ce) {
 
-        $sql = "select anexo from anexo where anexo like '".$ce."%'";
+        $sql = "select anexo from anexo where anexo like '" . $ce . "%'";
 
         $res = $this->c->ejecutar($sql);
         echo "<select id='anexo' name='anexo' class='form-control'>";
@@ -1265,7 +1270,7 @@ class Data {
         }
         echo "</select>";
     }
-    
+
     public function comboAnexoTodos() {
 
         $sql = "select anexo from anexo";
@@ -1279,7 +1284,7 @@ class Data {
         echo "</select>";
     }
 
-      public function comboAnexoTodosF($anexo) {
+    public function comboAnexoTodosF($anexo) {
 
         $sql = "select anexo from anexo";
 
@@ -1294,9 +1299,10 @@ class Data {
         }
         echo "</select>";
     }
-      public function comboAnexoTodosFF($anexo,$ce) {
 
-        $sql = "select anexo from anexo where anexo like '".$ce."%'";
+    public function comboAnexoTodosFF($anexo, $ce) {
+
+        $sql = "select anexo from anexo where anexo like '" . $ce . "%'";
 
         $res = $this->c->ejecutar($sql);
         echo "<select id='anexo' name='anexo' class='form-control'>";
@@ -1309,6 +1315,7 @@ class Data {
         }
         echo "</select>";
     }
+
     //    
 //     
 //      
@@ -1370,7 +1377,7 @@ class Data {
         $this->c->ejecutar($sql);
     }
 
-    public function upUser($id, $user, $per, $es, $ed, $el,$cen) {
+    public function upUser($id, $user, $per, $es, $ed, $el, $cen) {
         $sql = "UPDATE usuario set usuario='" . $user . "', permiso='" . $per . "', estado='" . $es . "', editar='" . $ed . "', eliminar='" . $el . "', centro='" . $cen . "' where id='" . $id . "'";
 
 
@@ -1406,6 +1413,19 @@ class Data {
 
     public function borrarUsuario($id) {
         $sql = "DELETE FROM usuario WHERE id = '" . $id . "'";
+        if (!$this->c->ejecutar($sql)) {
+            echo '<script language="javascript">';
+            echo 'alert("Error, No se Realizo la accion");location.href="../vista/portal.php"';
+            echo '</script>';
+        } else {
+            echo '<script language="javascript">';
+            echo 'alert("Eliminado Correctamente"); location.href="../vista/portal.php"';
+            echo '</script>';
+        }
+    }
+    
+    public function desasociarFunEqu($id) {
+        $sql = "DELETE FROM funcionarioPc WHERE equipo = '" . $id . "'";
         if (!$this->c->ejecutar($sql)) {
             echo '<script language="javascript">';
             echo 'alert("Error, No se Realizo la accion");location.href="../vista/portal.php"';

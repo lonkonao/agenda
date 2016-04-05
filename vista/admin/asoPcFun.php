@@ -51,6 +51,7 @@ if ($p == 0) {
 
         <link rel="stylesheet" href="../../plugins/select2/select2.min.css">
 
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -154,7 +155,20 @@ if ($p == 0) {
 
 
                 <div id='contenido'>
-                    
+                    <div class="fakeloader">
+
+                        <script>
+                            $(document).ready(function () {
+                                $(".fakeloader").fakeLoader({
+                                    timeToHide: 1200,
+                                    bgColor: "#ffffff",
+                                    zIndex:"10",
+                                    spinner: "spinner1",
+                                    imagePath: "../../imag/Preloader_3.gif"
+                                });
+                            });
+                        </script>
+                    </div>
 
                     <div class="row" style="margin-left: 10px;margin-top:10px">
                         <div class="col-md-11">
@@ -186,10 +200,10 @@ if ($p == 0) {
 
                                             <br>
                                             <br>
-                                           <br>
-                                           <br>
-                                           <br>
-                                            
+                                            <br>
+                                            <br>
+                                            <br>
+
                                             <button type='submit' class='btn btn-info pull-right'>Asociar</button>
 
                                         </form>
@@ -278,6 +292,7 @@ if ($p == 0) {
         </script>
         <!-- Bootstrap 3.3.5 -->
         <script src="../../bootstrap/js/bootstrap.min.js"></script>
+        <script src="../../js/fakeLoader.min.js"></script>
         <!-- Morris.js charts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
         <script src="../../plugins/morris/morris.min.js"></script>
