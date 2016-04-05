@@ -41,6 +41,7 @@ if ($p == 0) {
         <link rel="stylesheet" href="../../plugins/morris/morris.css">
         <!-- jvectormap -->
         <link rel="stylesheet" href="../../plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+        <link rel="stylesheet" href="../../plugins/datatables/dataTables.bootstrap.css">
         <!-- Date Picker -->
         <link rel="stylesheet" href="../../plugins/datepicker/datepicker3.css">
         <!-- Daterange picker -->
@@ -162,36 +163,58 @@ if ($p == 0) {
 
                                 </div><!-- /.box-header -->
                                 <div class="box-body">
-                                    <div class="col-xs-4" style="border:1px solid #f4f4f4;">
+                                    <div class="col-md-6" style="border: 1px solid rgb(244, 244, 244); width: 100%;">
+
                                         <form action="" method="POST">
                                             <?php
+                                            require_once '../../modelo/Data.php';
                                             $d = new Data();
-                                            
-                                            $d->comboIp();
+                                            echo "<div class = 'col-xs-6'>";
+                                            echo "       <label>Asociar Funcionario : </label>";
                                             $d->comboFuncionario();
-                                            
-                                            
+
+
+                                            echo "</div>";
+                                            echo "<div class = 'col-xs-6'>";
+                                            echo "       <label>Al Equipo/Anexo :</label>";
+                                            $d->comboIpMasAnex();
+                                            echo "</div>";
                                             ?>
+
+
+
+                                            <br>
+                                            <br>
+                                           <br>
+                                           <br>
+                                           <br>
                                             
+                                            <button type='submit' class='btn btn-info pull-right'>Asociar</button>
+
                                         </form>
 
+
+                                    </div>
+
+                                    <div class = "col-xs-6" style="width: 100%;">
+                                        <br>
+
+
+
+                                        <?php
+                                        $d->listaFunEqu();
+                                        ?>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
-                    </div>
-                    <div class = "col-xs-6">
-                        <?php
-                        require_once '../../modelo/Data.php';
-                        $d = new Data();
-                        $d->listaUsuario();
-                        ?>
+
                     </div>
                 </div>
-            </div>
-            <!-- /.content -->
-        </div><!-- /.content-wrapper -->
-
+                <!-- /.content -->
+            </div><!-- /.content-wrapper -->
+        </div>
 
 
 

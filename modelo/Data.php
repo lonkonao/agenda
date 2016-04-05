@@ -249,6 +249,76 @@ class Data {
 
         echo '</div>';
     }
+    public function listaFunEqu() {
+
+        $sql = "select f.nombre,f.apellidoP,e.nombre,fp.equipo, eq.anexo FROM"
+                . " funcionario f,estamento e,funcionarioPc fp, equipo eq WHERE"
+                . " fp.funcionario = f.id and f.estamento = e.id and fp.equipo = eq.ip ";
+        $res = $this->c->ejecutar($sql);
+
+        
+        echo" <script type='text/javascript' charset='utf-8'>";
+        echo"   $(document).ready(function () {";
+        echo"       $('#datatables').dataTable({";
+        echo "  'oLanguage': {";
+        echo "   'sLengthMenu': 'Mostrar _MENU_ Anexos por página',";
+        echo "   'sSearch': 'Buscar',";
+        echo "   'sEmptyTable': 'Vacio',";
+        echo "   'sZeroRecords':'Sin Resultados',";
+
+        echo "   'oPaginate': { ";
+        echo "   'sLast': 'Última página',";
+        echo"    'sFirst': 'Primera',";
+        echo"    'sNext': 'Siguiente',";
+        echo"    'sPrevious': 'Anterior'";
+        echo" },";
+        echo "    'sInfo': 'Hay _TOTAL_ Anexos. Mostrando de (_START_ a _END_)',";
+        echo" }";
+        echo"   })";
+        echo "})";
+        echo "  </script> ";
+
+
+
+        echo"<div class='col-md-13'>";
+        echo"  <table id='datatables' class='table table-striped'>";
+        echo"     <thead>";
+        echo"        <tr>";
+        echo"           <th>NOMBRE</th>";
+        echo"           <th>APELLIDO</th>";
+        echo"           <th>ESTAMENTO</th>";
+        echo"           <th>IP</th>";
+        echo"           <th>ANEXO</th>";
+        echo"           <th>ACCIONES</th>";
+        echo"      </tr>";
+        echo"  </thead>";
+        echo"  <tbody>";
+
+        while ($row = $res->fetch_array()) {
+            echo"        <tr>";
+            echo"            <td>" . $row[0] . "</td>";
+            echo"            <td>" . $row[1] . "</td>";
+            echo"            <td>" . $row[2] . "</td>";
+            echo"            <td>" . $row[3] . "</td>";
+            echo"            <td>" . $row[4] . "</td>";
+
+
+            echo "<td>";
+            echo"<div class='btn-group' role='group'>";
+            echo" <button type = 'button' class = 'btn btn-danger dropdown-toggle' data-toggle = 'dropdown' aria-haspopup = 'true' aria-expanded = 'false'>";
+            echo"  ACCION";
+            echo" <span class = 'caret'></span>";
+            echo" </button>";
+            echo " <ul class = 'dropdown-menu' role = 'menu'>";
+            echo " <li><a href='equipo.php?ip=" . $row[0] . "&nombre=" . $row[1] . "&box=" . $row[2] . "&sector=" . $row[3] . "&centro=" . $row[4] . "&anexo=" . $row[5] . "&numero=" . $row[6] . "&funcionario=" . $row[7] . "'> Actualizar</a></li>";
+            echo "</td>";
+            echo" </tr>";
+        }
+        echo" </tbody>";
+        echo" </table>";
+
+        echo '</div>';
+    }
     public function listaEquipoF($ce) {
 
         $sql = "SELECT e.ip,e.nombre,b.nombre,s.nombre,c.nombre,a.anexo,a.numeroExterno,f.nombre,f.apellidoP "
@@ -1054,15 +1124,15 @@ class Data {
         }
         echo "</select>";
     }
-    public function comboIp() {
+    public function comboIpMasAnex() {
 
-        $sql = "select ip from equipo WHERE nombre<> 'null'";
+        $sql = "select ip,anexo from equipo WHERE nombre<> 'null'";
 
         $res = $this->c->ejecutar($sql);
         echo "<select id = 'comboIP' name='comboIP' class='form-control'>";
         while ($resultado = $res->fetch_array()) {
 
-            echo "<option value='" . $resultado[0] . "'> " . $resultado[0] . "</option>";
+            echo "<option value='" . $resultado[0] . "'> IP: " . $resultado[0] . " / Anexo: " . $resultado[1] . "</option>";
         }
         echo "</select>";
     }
