@@ -154,6 +154,7 @@ if ($p == 0) {
 
 
                 <div id='contenido'>
+                    
 
                     <div class="row" style="margin-left: 10px;margin-top:10px">
                         <div class="col-md-11">
@@ -165,7 +166,7 @@ if ($p == 0) {
                                 <div class="box-body">
                                     <div class="col-md-6" style="border: 1px solid rgb(244, 244, 244); width: 100%;">
 
-                                        <form action="" method="POST">
+                                        <form action="../../controlador/ControFunEq.php" method="POST">
                                             <?php
                                             require_once '../../modelo/Data.php';
                                             $d = new Data();
