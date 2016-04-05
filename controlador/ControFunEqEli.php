@@ -1,10 +1,10 @@
 <?php
 require_once '../modelo/Data.php';
-$ip = $_POST['comboIP'];
-$funcionario = $_POST['funcionario'];
+$id = $_POST['id'];
+
 
 
 $d= new Data();
 
-$d->insertFuncioPc($funcionario, $ip);
+$d->desasociarFunEqu($id);
 
