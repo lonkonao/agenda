@@ -141,7 +141,7 @@ if ($p == 0) {
                 <section class="content-header"> <!-- nombre pagina y breadcrumb -->
                     <h1>
                         Mantenedor
-                        <small>Funcionario</small>
+                        <small>Funcionario - Equipo</small>
                     </h1>
 
                 </section>
