@@ -116,6 +116,7 @@ if ($p == 0) {
                                     echo"<li><a href = 'mantenedor.php'><i class = 'fa fa-gears'></i>General</a></li>";
                                     echo"<li><a href = 'funcionario.php'><i class = 'fa fa-stethoscope'></i>Funcionario</a></li>";
                                     echo"<li><a href = 'equipo.php'><i class = 'fa fa-desktop '></i>Equipo</a></li>";
+                                    echo"<li><a href = '#'><i class = 'fa fa-code-fork'></i>PC - Funcionario</a></li>";
                                 } elseif ($e == 0) {
 
                                     echo" <li><a href='../usuario/anexo.php'><i class='fa fa-phone'></i>Anexo</a></li> ";
@@ -151,51 +152,7 @@ if ($p == 0) {
 
                 <div id='contenido'>
 
-                    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h4 class="modal-title">Borrar Usuario</h4>
-                                </div>
-                                <form role="form" action="" name="frmPass" onsubmit="PassUser(id, usuario, pass1, pass2); return false">
-                                    <div class="col-lg-12">
-
-
-                                        <div class="form-group">
-                                            <label>ID</label>
-                                            <input name="id" class="form-control" required>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Usuario</label>
-                                            <input name="usuario" class="form-control" required>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Contraseña</label>
-                                            <input name="pass1" type="password" class="form-control" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Confirme Contraseña</label>
-                                            <input name="pass2" type="password" class="form-control" required>
-                                        </div>
-
-
-
-                                        <button type="submit" class="btn btn-info btn-lg">
-                                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Guardar
-                                        </button>
-
-                                    </div>
-                                </form>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger btn-circle" data-dismiss="modal"><i class="fa fa-times"></i></button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="row" style="margin-left: 10px;margin-top:10px">
                         <div class="col-md-11">
                             <div class="box box-warning ">

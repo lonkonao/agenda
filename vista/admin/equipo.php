@@ -118,6 +118,7 @@ if ($p == 0) {
                                     echo"<li><a href = 'mantenedor.php'><i class = 'fa fa-gears'></i>General</a></li>";
                                     echo"<li><a href = 'funcionario.php'><i class = 'fa fa-stethoscope'></i>Funcionario</a></li>";
                                     echo"<li><a href = '#'><i class = 'fa fa-desktop '></i>Equipo</a></li>";
+                                    echo"<li><a href = 'asoPcFun.php'><i class = 'fa fa-code-fork'></i>PC - Funcionario</a></li>";
                                 } elseif ($e == 0) {
 
                                     echo" <li><a href='../usuario/anexo.php'><i class='fa fa-phone'></i>Anexo</a></li> ";
