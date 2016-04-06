@@ -8,6 +8,7 @@ $pass = $_POST['txtPass'];
 $estado = $_POST['estado'];
 $editar = $_POST['editar'];
 $eliminar = $_POST['eliminar'];
+$centro = $_POST['centro'];
 
 $passwords = md5($pass);
 
@@ -15,6 +16,6 @@ $d = new Data();
 
 
 
-$d->insertUsuario($nombre, $passwords, $permiso, $estado, $editar, $eliminar);
+$d->insertUsuario($nombre, $pass, $permiso, $estado, $editar, $eliminar, $centro);
 
 

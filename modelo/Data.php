@@ -933,8 +933,8 @@ echo '</script>';
 }
 }
 
-public function insertUsuario($nombre, $pass, $permiso, $estado, $editar, $eliminar) {
-$sql = "insert into usuario values (null,'" . $nombre . "','" . $pass . "','" . $permiso . "','" . $estado . "','" . $editar . "','" . $eliminar . "')";
+public function insertUsuario($nombre, $pass, $permiso, $estado, $editar, $eliminar,$centro) {
+$sql = "insert into usuario values (null,'" . $nombre . "','" . $pass . "','" . $permiso . "','" . $estado . "','" . $editar . "','" . $eliminar . "','" . $centro . "')";
 
 if (!$this->c->ejecutar($sql)) {
 echo '<script language="javascript">';
@@ -1383,6 +1383,11 @@ $this->c->ejecutar($sql);
 
 public function upPassUser($id, $pass) {
 $sql = "UPDATE usuario set pass='" . $pass . "' where id='" . $id . "'";
+$this->c->ejecutar($sql);
+}
+
+public function upPassUserPor($usuario, $pass) {
+$sql = "UPDATE usuario set pass='" . $pass . "' where usuario='" . $usuario . "'";
 $this->c->ejecutar($sql);
 }
 

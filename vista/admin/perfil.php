@@ -122,7 +122,7 @@ if ($p == 0) {
 
                                     echo" <li><a href='../usuario/anexo.php'><i class='fa fa-phone'></i>Anexo</a></li> ";
                                     echo"<li><a href='../usuario/funcionario.php'><i class='fa fa-user'></i>Funcionario</a></li> ";
-                                   echo"<li><a href = '../admin/perfil.php'><i class = 'fa fa-user'></i>Mi Perfil</a></li>";
+                                    echo"<li><a href = '../admin/perfil.php'><i class = 'fa fa-user'></i>Mi Perfil</a></li>";
                                 }if ($p == 0) {
 
                                     echo" <li><a href='../admin/user.php'><i class='fa fa-user-md'></i>Usuarios</a></li> ";
@@ -152,6 +152,48 @@ if ($p == 0) {
 
 
                 <div id='contenido'>
+                    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title">Cambiar Contraseña</h4>
+                                </div>
+                                <form role="form" action="" name="frmPass" onsubmit="PassUserPortal(usuario, pass1, pass2); return false">
+                                    <div class="col-lg-12">
+
+                                        <div class="form-group">
+                                            <label>Usuario</label>
+                                            <input name="usuario" type="text" value="<?php echo "$n" ?>" class="form-control" >
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Contraseña</label>
+                                            <input name="pass1" type="password" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Confirme Contraseña</label>
+                                            <input name="pass2" type="password" class="form-control" required>
+                                        </div>
+
+
+
+                                        <button type="submit" class="btn btn-info btn-lg">
+                                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Guardar
+                                        </button>
+
+                                    </div>
+                                </form>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger btn-circle" data-dismiss="modal"><i class="fa fa-times"></i></button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
                     <div class="fakeloader">
 
                         <script>
@@ -164,23 +206,99 @@ if ($p == 0) {
                                     imagePath: "../../imag/Preloader_3.gif"
                                 });
                             });
+
+                            function CambiarPass() {
+                                
+                                document.frmPass.usuario.disabled = true;
+                                document.frmPass.pass1.value = '';
+                                document.frmPass.pass2.value = '';
+                                $('#modal').modal('show');
+                            }
                         </script>
                     </div>
-                    <div class="row" style="margin-left: 10px;margin-top:10px">
-                        <div class="col-md-12">
-                            <div class="box box-warning ">
-                                <div class="box-header with-border">
-                                    <h3 class="box-title">Perfil</h3>
 
-                                </div><!-- /.box-header -->
-                                <div class="box-body">
-                                    <div class="col-xs-4" style="border:1px solid #f4f4f4;">
-                                  
-                                    </div>
-                                    
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="box box-widget widget-user-2">
+                                <!-- Add the bg color to the header using any of the bg-* classes -->
+                                <div class="widget-user-header bg-yellow">
+                                    <div class="widget-user-image">
+                                        <img class="img-circle" src="../../imag/logo_big.png" alt="User Avatar">
+                                    </div><!-- /.widget-user-image -->
+                                    <h3 class="widget-user-username"><?php echo "$n" ?></h3>
+                                    <h5 class="widget-user-desc"><?php echo "$permisoNombre" ?></h5>
+                                </div>
+                                <div class="box-footer no-padding">
+                                    <ul class="nav nav-stacked">
+                                        <?php
+                                        if ($e == 1) {
+                                            echo"  <li><a href = '#'>¿Puedo Editar? <span class = 'pull-right badge bg-blue'>SI</span></a></li>";
+                                        } else {
+                                            echo"  <li><a href = '#'>¿Puedo Editar? <span class = 'pull-right badge bg-blue'>NO</span></a></li>";
+                                        }
+
+                                        if ($e == 1) {
+                                            echo"  <li><a href = '#'>¿Puedo Eliminar? <span class = 'pull-right badge bg-aqua'>SI</span></a></li>";
+                                        } else {
+                                            echo"  <li><a href = '#'>¿Puedo Eliminar? <span class = 'pull-right badge bg-aqua'>NO</span></a></li>";
+                                        }
+
+                                        switch ($ce) {
+                                            case 1:
+                                                echo"  <li><a href = '#'>Pertenece al Centro <span class = 'pull-right badge bg-green'>CESFAM 1</span></a></li>";
+
+                                                break;
+                                            case 2:
+                                                echo"  <li><a href = '#'>Pertenece al Centro <span class = 'pull-right badge bg-green'>CESFAM 2</span></a></li>";
+
+                                                break;
+                                            case 3:
+                                                echo"  <li><a href = '#'>Pertenece al Centro <span class = 'pull-right badge bg-green'>CESFAM 3</span></a></li>";
+
+                                                break;
+                                            case 4:
+                                                echo"  <li><a href = '#'>Pertenece al Centro <span class = 'pull-right badge bg-green'>CESFAM 4</span></a></li>";
+
+                                                break;
+                                            case 5:
+                                                echo"  <li><a href = '#'>Pertenece al Centro <span class = 'pull-right badge bg-green'>CESFAM 5</span></a></li>";
+
+                                                break;
+                                            case 6:
+                                                echo"  <li><a href = '#'>Pertenece al Centro <span class = 'pull-right badge bg-green'>CESFAM 6</span></a></li>";
+
+                                                break;
+                                            case 7:
+                                                echo"  <li><a href = '#'>Pertenece al Centro <span class = 'pull-right badge bg-green'>CECOSF 1</span></a></li>";
+
+                                                break;
+                                            case 8:
+                                                echo"  <li><a href = '#'>Pertenece al Centro <span class = 'pull-right badge bg-green'>CECOSF 2</span></a></li>";
+
+                                                break;
+                                            case 9:
+                                                echo"  <li><a href = '#'>Pertenece al Centro <span class = 'pull-right badge bg-green'>CECOSF 4</span></a></li>";
+
+                                                break;
+                                            case 10:
+                                                echo"  <li><a href = '#'>Pertenece al Centro <span class = 'pull-right badge bg-green'>BRUJULA Y LABORATORIO</span></a></li>";
+
+                                                break;
+                                            case 41:
+                                                echo"  <li><a href = '#'>Pertenece al Centro <span class = 'pull-right badge bg-green'>CESFAM 4B</span></a></li>";
+
+                                                break;
+                                            case 0:
+                                                echo"  <li><a href = '#'>Pertenece al Centro <span class = 'pull-right badge bg-green'>ACCESO TOTAL</span></a></li>";
+
+                                                break;
+                                        }
+                                        ?>                                       
+                                        <li><a onclick="CambiarPass()">Cambiar Mi Contraseña <span class = 'pull-right badge bg-red'></span></a></li>
+
+                                    </ul>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -199,36 +317,37 @@ if ($p == 0) {
             <strong>Copyright &copy; 2016-2017 <a href="#">Giovanni Cáceres R.</a></strong> 
         </footer>
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-light">
-            <!-- Create the tabs -->
-            <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+        <!--Control Sidebar -->
+        <aside class = "control-sidebar control-sidebar-light">
+            <!--Create the tabs -->
+            <ul class = "nav nav-tabs nav-justified control-sidebar-tabs">
 
 
             </ul>
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <!-- Home tab content -->
-                <div class="tab-pane" id="control-sidebar-home-tab">
-                    <!-- /.control-sidebar-menu -->
+            <!--Tab panes -->
+            <div class = "tab-content">
+                <!--Home tab content -->
+                <div class = "tab-pane" id = "control-sidebar-home-tab">
+                    <!--/.control-sidebar-menu -->
 
-                </div><!-- /.tab-pane -->
-                <!-- Stats tab content -->
+                </div><!--/.tab-pane -->
+                <!--Stats tab content -->
 
 
             </div>
-        </aside><!-- /.control-sidebar -->
-        <!-- Add the sidebar's background. This div must be placed
-             immediately after the control sidebar -->
+        </aside><!--/.control-sidebar -->
+        <!--Add the sidebar's background. This div must be placed
+immediately after the control sidebar -->
 
 
+        <script src="../../js/ajax.js"></script>
         <!-- jQuery 2.1.4 -->
         <script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
         <!-- jQuery UI 1.11.4 -->
         <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
         <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
         <script>
-                            $.widget.bridge('uibutton', $.ui.button);
+                                            $.widget.bridge('uibutton', $.ui.button);
         </script>
         <!-- Bootstrap 3.3.5 -->
         <script src="../../bootstrap/js/bootstrap.min.js"></script>

@@ -173,7 +173,7 @@ if ($p == 0) {
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h4 class="modal-title">Borrar Usuario</h4>
+                                    <h4 class="modal-title">Cambiar Contraseña</h4>
                                 </div>
                                 <form role="form" action="" name="frmPass" onsubmit="PassUser(id, usuario, pass1, pass2); return false">
                                     <div class="col-lg-12">
@@ -498,6 +498,7 @@ if ($p == 0) {
                                             echo "<option value='2'>CESFAM 2</option>";
                                             echo "<option value='3'>CESFAM 3</option>";
                                             echo "<option value='4'>CESFAM 4</option>";
+                                            echo "<option value='41'>CESFAM 4B</option>";
                                             echo "<option value='5'>CESFAM 5</option>";
                                             echo "<option value='6'>CESFAM 6</option>";
                                             echo "<option value='7'>CECOSF 1</option>";

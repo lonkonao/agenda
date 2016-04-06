@@ -318,7 +318,147 @@ if ($p == 0) {
 
                                             case 1:
 
-                                                if (isset($_GET['ip'])) {
+                                                switch ($ce) {
+                                                    case 0:
+                                                        if (isset($_GET['ip'])) {
+                                                    $viajando = 1;
+                                                    $ip = $_GET['ip'];
+                                                    $nombre = $_GET['nombre'];
+                                                    $box = $_GET['box'];
+                                                    $sector = $_GET['sector'];
+                                                    $centro = $_GET['centro'];
+                                                    $anexo = $_GET['anexo'];
+                                                    $numero = $_GET['numero'];
+                                                    $funcionario = $_GET['funcionario'];
+                                                    echo "<form class='form-horizontal' method='POST' action='../../controlador/ControEquipoUP.php?f=" . $funcionario . "'>";
+                                                    echo "    <div class='box-body'>";
+                                                    echo "        <div class='form-group'>";
+                                                    echo "            <div class='col-sm-10'>";
+                                                    echo "                <label>Direccion IP</label>";
+                                                    echo "                <input type='text' class='form-control' name='txtIp' value='" . $ip . "'>";
+                                                    echo "            </div>";
+                                                    echo "            <div class='col-sm-10'>";
+                                                    echo "                <label>Nombre Equipo</label>";
+                                                    echo "                <input type='text' class='form-control' name='txtNombre' value='" . $nombre . "'>";
+                                                    echo "            </div>";
+                                                    echo "            <div class='col-sm-10'>";
+                                                    echo "                <label>Box Equipo</label>";
+
+                                                    require '../../modelo/Data.php';
+                                                    $d = new Data();
+
+                                                    $d->comboBoxF($box);
+
+
+                                                    echo "            </div>";
+                                                    echo "            <div class='col-sm-10'>";
+                                                    echo "              <label>Sector Equipo</label>";
+
+
+
+                                                    $d->comboSectorF($sector);
+
+
+                                                    echo "           </div>";
+                                                    echo "         <div class='col-sm-10'>";
+                                                    echo "             <label>Centro Asistencial</label>";
+
+
+
+                                                    $d->comboCentroFA($ce);
+
+
+                                                    echo "         </div>";
+                                                    echo "         <div class='col-sm-10'>";
+                                                    echo "       <label>Anexo Equipo</label>";
+                                                    $d->comboAnexoTodosF($anexo);
+                                                    echo "   </div>";
+                                                    echo "   <div class='col-sm-10'>";
+                                                    echo "       <label>Numero Externo</label>";
+                                                    echo "       <input type='number' class='form-control' name='txtnum' value='" . $numero . "'>";
+                                                    echo "   </div>";
+                                                    echo "   <div class='col-sm-10'>";
+                                                    echo "       <label>Funcionario</label>";
+
+                                                    $d->comboFuncionarioF($funcionario);
+
+                                                    echo "   </div>";
+                                                    echo " </div>";
+
+                                                    echo "     </div><!-- /.box-body -->";
+                                                    echo "     <div class='box-footer'>";
+                                                    echo "        <button type='submit' class='btn btn-info pull-right'>Guardar</button>";
+                                                    echo "     </div>";
+                                                    echo " </form>";
+                                                } else {
+                                                    echo "<form class='form-horizontal' method='POST' action='../../controlador/ControEquipo.php'>";
+                                                    echo "    <div class='box-body'>";
+                                                    echo "        <div class='form-group'>";
+                                                    echo "            <div class='col-sm-10'>";
+                                                    echo "                <label>Direccion IP</label>";
+                                                    echo "                <input type='text' class='form-control' name='txtIp' placeholder='192.168.1.1'>";
+                                                    echo "            </div>";
+                                                    echo "            <div class='col-sm-10'>";
+                                                    echo "                <label>Nombre Equipo</label>";
+                                                    echo "                <input type='text' class='form-control' name='txtNombre' placeholder='Nombre-Equipo'>";
+                                                    echo "            </div>";
+                                                    echo "            <div class='col-sm-10'>";
+                                                    echo "                <label>Box Equipo</label>";
+
+                                                    require '../../modelo/Data.php';
+                                                    $d = new Data();
+
+                                                    $d->comboBox();
+
+
+                                                    echo "            </div>";
+                                                    echo "            <div class='col-sm-10'>";
+                                                    echo "              <label>Sector Equipo</label>";
+
+
+
+                                                    $d->comboSector();
+
+
+                                                    echo "           </div>";
+                                                    echo "         <div class='col-sm-10'>";
+                                                    echo "             <label>Centro Asistencial</label>";
+
+
+
+                                                    $d->comboCentro();
+
+
+                                                    echo "         </div>";
+                                                    echo "         <div class='col-sm-10'>";
+                                                    echo "       <label>Anexo Equipo</label>";
+                                                    $d->comboAnexoTodos();
+                                                    echo "   </div>";
+                                                    echo "   <div class='col-sm-10'>";
+                                                    echo "       <label>Numero Externo</label>";
+                                                    echo "       <input type='number' class='form-control' name='txtnum' placeholder='Numero Externo'>";
+                                                    echo "   </div>";
+                                                    echo "   <div class='col-sm-10'>";
+                                                    echo "       <label>Funcionario</label>";
+
+                                                    $d->comboFuncionario();
+
+                                                    echo "   </div>";
+                                                    echo " </div>";
+
+                                                    echo "     </div><!-- /.box-body -->";
+                                                    echo "     <div class='box-footer'>";
+                                                    echo "        <button type='submit' class='btn btn-info pull-right'>Guardar</button>";
+                                                    echo "     </div>";
+                                                    echo " </form>";
+                                                }
+                                                        
+
+
+                                                        break;
+
+                                                    default:
+                                                        if (isset($_GET['ip'])) {
                                                     $viajando = 1;
                                                     $ip = $_GET['ip'];
                                                     $nombre = $_GET['nombre'];
@@ -449,6 +589,7 @@ if ($p == 0) {
                                                     echo "        <button type='submit' class='btn btn-info pull-right'>Guardar</button>";
                                                     echo "     </div>";
                                                     echo " </form>";
+                                                }
                                                 }
 
 
