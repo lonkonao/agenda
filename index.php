@@ -42,7 +42,7 @@
 
 
     </head>
-    <body class="sidebar-mini skin-red">
+    <body class="hold-transition skin-blue sidebar-mini">
 
         <div class="wrapper">
 
