@@ -73,7 +73,7 @@ if ($p == 0) {
 
         <div class="wrapper">
 
-            <header class="main-header">
+            <header class="main-header skin-red">
                 <!-- Logo -->
                 <a href="../../vista/portal.php" class="logo">
                     <!-- mini logo for sidebar mini 50x50 pixels -->
