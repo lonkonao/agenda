@@ -48,7 +48,7 @@ if ($p == 0) {
         <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker-bs3.css">
         <!-- bootstrap wysihtml5 - text editor -->
         <link rel="stylesheet" href="../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-         <link rel="stylesheet" href="../css/fakeLoader.css">
+        <link rel="stylesheet" href="../css/fakeLoader.css">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -68,7 +68,7 @@ if ($p == 0) {
                     <!-- mini logo for sidebar mini 50x50 pixels -->
                     <span class="logo-mini"><b>T</b>I</span>
                     <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="../../imag/logo_big.png" alt="lg" style="height: 57px;"></span>                </a>
+                    <span class="logo-lg"><img src="../imag/logo_big.png" alt="lg" style="height: 57px;"></span>                </a>
                 <!-- Header Navbar: style can be found in header.less -->
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -83,43 +83,33 @@ if ($p == 0) {
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <img src="../imag/logo_big.png" class="user-image" alt="User Image">
-                                    <span class="hidden-xs"><?php $n?></span>
+                                    <span class="hidden-xs"><?php echo "$n" ?></span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- User image -->
                                     <li class="user-header">
                                         <img src="../imag/user.jpg" class="img-circle" alt="User Image">
                                         <p>
-                                            <?php $n?>
-                                            <small><?php $p?></small>
+                                            <?php echo "$n" ?>
+                                            <small><?php echo "$permisoNombre" ?></small>
                                         </p>
                                     </li>
 
 
                                     <!-- Menu Body -->
                                     <li class="user-body">
-                                        <form id="signin" class="navbar-form navbar-right" role="form" method="post" action="../controlador/ControInicioSession.php">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                                <input id="email" type="text" name="txtUser" class="form-control" placeholder="Usuario">                                        
-                                            </div>
 
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                                <input id="password" type="password" class="form-control" name="txtPass" placeholder="Password">                                        
-                                            </div>
-
-                                            <button type="submit" class="btn btn-primary">Login</button>
-                                        </form>
                                     </li>
                                     <!-- Menu Footer-->
                                     <li class="user-footer">
-                                        <!--                    <div class="pull-left">
-                                                              <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                                            </div>
-                                                            <div class="pull-right">
-                                                              <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                                                            </div>-->
+                                        <div class="pull-left">
+                                            <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                                        </div>
+                                        <div class="pull-right">
+                                            <a href="#" class="btn btn-default btn-flat">Cerrar Sesión</a>
+                                        </div>
+
+
                                     </li>
                                 </ul>
                             </li>
@@ -130,7 +120,7 @@ if ($p == 0) {
                         </ul>
                     </div>
 
-     
+
                 </nav>
             </header>
             <!-- Left side column. contains the logo and sidebar -->
@@ -157,9 +147,9 @@ if ($p == 0) {
                             <ul class="treeview-menu">
                                 <li><a href='admin/anexoBus.php'><i class='fa fa-phone'></i>Anexo</a></li> 
                                 <li><a href='admin/funcionarioBus.php'><i class='fa fa-user'></i>Funcionario</a></li> 
-                           </ul>
+                            </ul>
                         </li>
-                        
+
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-gears"></i> <span>Mantenedor</span> <i class="fa fa-angle-left pull-right"></i>
@@ -172,19 +162,21 @@ if ($p == 0) {
                                     echo"<li><a href = 'admin/funcionario.php'><i class = 'fa fa-stethoscope'></i>Funcionario</a></li>";
                                     echo"<li><a href = 'admin/equipo.php'><i class = 'fa fa-desktop'></i>Equipo</a></li>";
                                     echo"<li><a href = 'admin/asoPcFun.php'><i class = 'fa fa-code-fork'></i>PC - Funcionario</a></li>";
+                                    echo"<li><a href = 'admin/perfil.php'><i class = 'fa fa-user'></i>Mi Perfil</a></li>";
                                 } elseif ($e == 0) {
 
                                     echo" <li><a href='usuario/anexo.php'><i class='fa fa-phone'></i>Anexo</a></li> ";
                                     echo"<li><a href='usuario/funcionario.php'><i class='fa fa-user'></i>Funcionario</a></li> ";
-                                }if ($p==0) {
-    
+                                    echo"<li><a href = 'admin/perfil.php'><i class = 'fa fa-user'></i>Mi Perfil</a></li>";
+                                }if ($p == 0) {
+
                                     echo" <li><a href='admin/user.php'><i class='fa fa-user-md'></i>Usuarios</a></li> ";
-}
+                                }
                                 ?>
                             </ul>
                         </li>
-                        
-                        
+
+
 
                     </ul>
                 </section>
@@ -217,7 +209,7 @@ if ($p == 0) {
                                 $(".fakeloader").fakeLoader({
                                     timeToHide: 1200,
                                     bgColor: "#ffffff",
-                                    zIndex:"10",
+                                    zIndex: "10",
                                     spinner: "spinner1",
                                     imagePath: "../imag/Preloader_3.gif"
                                 });
@@ -270,7 +262,7 @@ if ($p == 0) {
             <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
             <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
             <script>
-                $.widget.bridge('uibutton', $.ui.button);
+                            $.widget.bridge('uibutton', $.ui.button);
             </script>
             <!-- Bootstrap 3.3.5 -->
             <script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -306,6 +298,6 @@ if ($p == 0) {
             <script src="../dist/js/pages/dashboard.js"></script>
             <!-- AdminLTE for demo purposes -->
             <script src="../dist/js/demo.js"></script>
-             <script src="../js/fakeLoader.min.js"></script>
+            <script src="../js/fakeLoader.min.js"></script>
     </body>
 </html>

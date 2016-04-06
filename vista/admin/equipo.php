@@ -129,10 +129,12 @@ if ($p == 0) {
                                     echo"<li><a href = 'funcionario.php'><i class = 'fa fa-stethoscope'></i>Funcionario</a></li>";
                                     echo"<li><a href = '#'><i class = 'fa fa-desktop '></i>Equipo</a></li>";
                                     echo"<li><a href = 'asoPcFun.php'><i class = 'fa fa-code-fork'></i>PC - Funcionario</a></li>";
+                                    echo"<li><a href = 'perfil.php'><i class = 'fa fa-user'></i>Mi Perfil</a></li>";
                                 } elseif ($e == 0) {
 
                                     echo" <li><a href='../usuario/anexo.php'><i class='fa fa-phone'></i>Anexo</a></li> ";
                                     echo"<li><a href='../usuario/funcionario.php'><i class='fa fa-user'></i>Funcionario</a></li> ";
+                                    echo"<li><a href = '../admin/perfil.php'><i class = 'fa fa-user'></i>Mi Perfil</a></li>";
                                 }if ($p == 0) {
 
                                     echo" <li><a href='../admin/user.php'><i class='fa fa-user-md'></i>Usuarios</a></li> ";
