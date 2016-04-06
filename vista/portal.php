@@ -106,7 +106,7 @@ if ($p == 0) {
                                             <a href="admin/perfil.php" class="btn btn-default btn-flat">Perfil</a>
                                         </div>
                                         <div class="pull-right">
-                                            <a href="#" class="btn btn-default btn-flat">Cerrar Sesión</a>
+                                            <a href="../controlador/ControCerrarSession.php" class="btn btn-default btn-flat">Cerrar Sesión</a>
                                         </div>
 
 
