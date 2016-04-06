@@ -42,7 +42,7 @@
 
 
     </head>
-    <body class="hold-transition skin-blue sidebar-mini">
+    <body class="sidebar-mini skin-red">
 
         <div class="wrapper">
 
@@ -109,7 +109,7 @@
                                 </ul>
                             </li>
                             <!-- Control Sidebar Toggle Button -->
-                            <!--              <li>
+<!--                                         <li>
                                             <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
                                           </li>-->
                         </ul>
