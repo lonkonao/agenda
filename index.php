@@ -61,68 +61,59 @@
                         <span class="sr-only">Toggle navigation</span>
                     </a>
                     <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav">
-              <!-- Messages: style can be found in dropdown.less-->
+                        <ul class="nav navbar-nav">
+                            <!-- Messages: style can be found in dropdown.less-->
 
-              <!-- User Account: style can be found in dropdown.less -->
-              <li class="dropdown user user-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <img src="imag/logo_big.png" class="user-image" alt="User Image">
-                  <span class="hidden-xs">Alexander Pierce</span>
-                </a>
-                <ul class="dropdown-menu">
-                  <!-- User image -->
-                  <li class="user-header">
-                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                    <p>
-                      Alexander Pierce - Web Developer
-                      <small>Member since Nov. 2012</small>
-                    </p>
-                  </li>
-                  
-                  
-                  <!-- Menu Body -->
-                  <li class="user-body">
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Followers</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Sales</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Friends</a>
-                    </div>
-                  </li>
-                  <!-- Menu Footer-->
-                  <li class="user-footer">
-                    <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Profile</a>
-                    </div>
-                    <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <!-- Control Sidebar Toggle Button -->
-<!--              <li>
-                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-              </li>-->
-            </ul>
-          </div>
-                    <form id="signin" class="navbar-form navbar-right" role="form" method="post" action="controlador/ControInicioSession.php">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input id="email" type="text" name="txtUser" class="form-control" placeholder="Usuario">                                        
-                        </div>
+                            <!-- User Account: style can be found in dropdown.less -->
+                            <li class="dropdown user user-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="imag/user.jpg" class="user-image" alt="User Image">
+                                    <span class="hidden-xs">Invitado</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- User image -->
+                                    <li class="user-header">
+                                        <img src="imag/user.jpg" class="img-circle" alt="User Image">
+                                        <p>
+                                            Inicio de Sesión
 
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input id="password" type="password" class="form-control" name="txtPass" placeholder="Password">                                        
-                        </div>
+                                        </p>
+                                    </li>
 
-                        <button type="submit" class="btn btn-primary">Login</button>
-                    </form>
+
+                                    <!-- Menu Body -->
+                                    <li class="user-body">
+                                        <form id="signin" class="navbar-form navbar-right" role="form" method="post" action="controlador/ControInicioSession.php">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                <input id="email" type="text" name="txtUser" class="form-control" placeholder="Usuario">                                        
+                                            </div>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                                <input id="password" type="password" class="form-control" name="txtPass" placeholder="Password">                                        
+                                            </div>
+
+                                            <button type="submit" class="btn btn-primary">Login</button>
+                                        </form>
+                                    </li>
+                                    <!-- Menu Footer-->
+                                    <li class="user-footer">
+                                        <!--                    <div class="pull-left">
+                                                              <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                                            </div>
+                                                            <div class="pull-right">
+                                                              <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                                            </div>-->
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Control Sidebar Toggle Button -->
+                            <!--              <li>
+                                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                                          </li>-->
+                        </ul>
+                    </div>
 
                 </nav>
             </header>
@@ -144,7 +135,7 @@
                         <li><a href="index.php"><i class="fa fa-home"></i><span>Inicio</span></a></li>
 
 
-                        
+
 
                         <li class="treeview">
                             <a href="#">
@@ -180,18 +171,18 @@
 
                 <div id='contenido'>
                     <?php
-                require_once './modelo/Data.php';
-                
+                    require_once './modelo/Data.php';
 
-                if (isset($_GET["e"])) {
-                    $error = $_REQUEST["e"];
-                    if ($error == 1) {
-                        echo "<p class='bg-danger'>Error en Usuario y/o Contraseña</p>";
-                    } elseif ($error == 0) {
-                        echo "<p class='bg-danger'>Su Usuario aun no ha sido activado</p>";
+
+                    if (isset($_GET["e"])) {
+                        $error = $_REQUEST["e"];
+                        if ($error == 1) {
+                            echo "<p class='bg-danger'>Error en Usuario y/o Contraseña</p>";
+                        } elseif ($error == 0) {
+                            echo "<p class='bg-danger'>Su Usuario aun no ha sido activado</p>";
+                        }
                     }
-                }
-                ?>
+                    ?>
                     <center>
                         <div class="col-md-4 col-sm-5 col-xs-12">
                             <div class="info-box">
@@ -269,7 +260,7 @@
         <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
         <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
         <script>
-                            $.widget.bridge('uibutton', $.ui.button);
+            $.widget.bridge('uibutton', $.ui.button);
         </script>
         <!-- Bootstrap 3.3.5 -->
         <script src="bootstrap/js/bootstrap.min.js"></script>

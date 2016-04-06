@@ -49,7 +49,7 @@
 
             <header class="main-header">
                 <!-- Logo -->
-                <a href="#" class="logo">
+                <a href="../../index.php" class="logo">
                     <!-- mini logo for sidebar mini 50x50 pixels -->
                     <span class="logo-mini"><b>T</b>I</span>
                     <!-- logo for regular state and mobile devices -->
@@ -60,19 +60,60 @@
                     <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                         <span class="sr-only">Toggle navigation</span>
                     </a>
-                    <form id="signin" class="navbar-form navbar-right" role="form" method="post" action="../../controlador/ControInicioSession.php">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input id="email" type="text" name="txtUser" class="form-control"  placeholder="Usuario">                                        
-                        </div>
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <!-- Messages: style can be found in dropdown.less-->
 
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input id="password" type="password" class="form-control" name="txtPass"  placeholder="Password">                                        
-                        </div>
+                            <!-- User Account: style can be found in dropdown.less -->
+                            <li class="dropdown user user-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="../../imag/user.jpg" class="user-image" alt="User Image">
+                                    <span class="hidden-xs">Invitado</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- User image -->
+                                    <li class="user-header">
+                                        <img src="../../imag/user.jpg" class="img-circle" alt="User Image">
+                                        <p>
+                                            Inicio de Sesión
 
-                        <button type="submit" class="btn btn-primary">Login</button>
-                    </form>
+                                        </p>
+                                    </li>
+
+
+                                    <!-- Menu Body -->
+                                    <li class="user-body">
+                                        <form id="signin" class="navbar-form navbar-right" role="form" method="post" action="controlador/ControInicioSession.php">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                <input id="email" type="text" name="txtUser" class="form-control" placeholder="Usuario">                                        
+                                            </div>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                                <input id="password" type="password" class="form-control" name="txtPass" placeholder="Password">                                        
+                                            </div>
+
+                                            <button type="submit" class="btn btn-primary">Login</button>
+                                        </form>
+                                    </li>
+                                    <!-- Menu Footer-->
+                                    <li class="user-footer">
+                                        <!--                    <div class="pull-left">
+                                                              <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                                            </div>
+                                                            <div class="pull-right">
+                                                              <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                                            </div>-->
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Control Sidebar Toggle Button -->
+                            <!--              <li>
+                                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                                          </li>-->
+                        </ul>
+                    </div>
 
      
                 </nav>
