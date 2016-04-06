@@ -85,7 +85,7 @@
 
                                     <!-- Menu Body -->
                                     <li class="user-body">
-                                        <form id="signin" class="navbar-form navbar-right" role="form" method="post" action="controlador/ControInicioSession.php">
+                                        <form id="signin" class="navbar-form navbar-right" role="form" method="post" action="../../controlador/ControInicioSession.php">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                                 <input id="email" type="text" name="txtUser" class="form-control" placeholder="Usuario">                                        
