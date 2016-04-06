@@ -39,7 +39,7 @@
 }
 .skin-black .main-header > .navbar > .sidebar-toggle {
   color: #333;
-  border-right: 1px solid #eee;
+  border-right: 0px solid #eee;
 }
 .skin-black .main-header > .navbar .navbar-nav > li > a {
   border-right: 1px solid #eee;
@@ -53,7 +53,7 @@
   background-color: #ffffff;
   color: #333333;
   border-bottom: 0 solid transparent;
-  border-right: 1px solid #eee;
+  border-right: 0px solid #eee;
 }
 .skin-black .main-header > .logo:hover {
   background-color: #fcfcfc;
