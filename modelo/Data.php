@@ -825,7 +825,7 @@ class Data {
             echo '</script>';
         } else {
             echo '<script language="javascript">';
-            echo 'alert("Registrado Correctamente"); location.href="../vista/portal.php"';
+            echo 'alert("Registrado Correctamente"); location.href=""../vista/admin/mantenedor.php"';
             echo '</script>';
         }
     }
@@ -842,7 +842,7 @@ class Data {
             echo '</script>';
         } else {
             echo '<script language="javascript">';
-            echo 'alert("Registrado Correctamente"); location.href="../vista/portal.php"';
+            echo 'alert("Registrado Correctamente"); location.href="../vista/admin/equipo.php"';
             echo '</script>';
         }
     }
@@ -856,7 +856,7 @@ class Data {
             echo '</script>';
         } else {
             echo '<script language="javascript">';
-            echo 'alert("Registrado Correctamente"); location.href="../vista/portal.php"';
+            echo 'alert("Registrado Correctamente"); location.href="../vista/admin/mantenedor.php"';
             echo '</script>';
         }
     }
@@ -870,7 +870,7 @@ class Data {
             echo '</script>';
         } else {
             echo '<script language="javascript">';
-            echo 'alert("Registrado Correctamente"); location.href="../vista/portal.php"';
+            echo 'alert("Registrado Correctamente"); location.href="../vista/admin/funcionario.php"';
             echo '</script>';
         }
     }
@@ -884,7 +884,7 @@ class Data {
             echo '</script>';
         } else {
             echo '<script language="javascript">';
-            echo 'alert("Registrado Correctamente"); location.href="../vista/portal.php"';
+            echo 'alert("Registrado Correctamente"); location.href="../vista/admin/mantenedor.php"';
             echo '</script>';
         }
     }
@@ -898,7 +898,7 @@ class Data {
             echo '</script>';
         } else {
             echo '<script language="javascript">';
-            echo 'alert("Registrado Correctamente"); location.href="../vista/portal.php"';
+            echo 'alert("Registrado Correctamente"); location.href="../vista/admin/mantenedor.php"';
             echo '</script>';
         }
     }
@@ -912,7 +912,7 @@ class Data {
             echo '</script>';
         } else {
             echo '<script language="javascript">';
-            echo 'alert("Registrado Correctamente"); location.href="../vista/portal.php"';
+            echo 'alert("Registrado Correctamente"); location.href="../vista/admin/mantenedor.php"';
             echo '</script>';
         }
     }
@@ -926,7 +926,7 @@ class Data {
             echo '</script>';
         } else {
             echo '<script language="javascript">';
-            echo 'alert("Registrado Correctamente"); location.href="../vista/portal.php"';
+            echo 'alert("Registrado Correctamente"); location.href="../vista/admin/mantenedor.php"';
             echo '</script>';
         }
     }
