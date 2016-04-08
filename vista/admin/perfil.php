@@ -159,7 +159,7 @@ if ($p == 0) {
                                 <?php
                                 if ($e == 1) {
                                     echo"<li><a href = 'mantenedor.php'><i class = 'fa fa-gears'></i>General</a></li>";
-                                    echo"<li><a href = '#'><i class = 'fa fa-stethoscope'></i>Funcionario</a></li>";
+                                    echo"<li><a href = 'funcionario.php'><i class = 'fa fa-stethoscope'></i>Funcionario</a></li>";
                                     echo"<li><a href = 'equipo.php'><i class = 'fa fa-desktop '></i>Equipo</a></li>";
                                     echo"<li><a href = 'asoPcFun.php'><i class = 'fa fa-code-fork'></i>PC - Funcionario</a></li>";
                                     echo"<li><a href = '#'><i class = 'fa fa-user'></i>Mi Perfil</a></li>";
@@ -282,7 +282,7 @@ if ($p == 0) {
                                             echo"  <li><a href = '#'>¿Puedo Editar? <span class = 'pull-right badge bg-blue'>NO</span></a></li>";
                                         }
 
-                                        if ($e == 1) {
+                                        if ($el == 1) {
                                             echo"  <li><a href = '#'>¿Puedo Eliminar? <span class = 'pull-right badge bg-aqua'>SI</span></a></li>";
                                         } else {
                                             echo"  <li><a href = '#'>¿Puedo Eliminar? <span class = 'pull-right badge bg-aqua'>NO</span></a></li>";

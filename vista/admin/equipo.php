@@ -13,6 +13,73 @@ if ($p == 0) {
 } else if ($p == 1) {
     $permisoNombre = "Usuario";
 }
+
+
+
+switch ($ce) {
+    case 1:
+
+        $anexoCentro = 10;
+        $ipCentro = 1;
+
+        break;
+    case 2:
+        $anexoCentro = 2;
+        $ipCentro = 2;
+
+        break;
+    case 3:
+        $anexoCentro = 3;
+        $ipCentro = 3;
+
+        break;
+    case 4:
+        $anexoCentro = 4;
+        $ipCentro = 4;
+
+        break;
+    case 5:
+        $anexoCentro = 5;
+        $ipCentro = 4;
+
+        break;
+    case 6:
+        $anexoCentro = 6;
+        $ipCentro = 6;
+
+        break;
+    case 7:
+        $anexoCentro = 10;
+        $ipCentro = 11;
+
+        break;
+    case 8:
+        $anexoCentro = 22;
+        $ipCentro = 22;
+
+        break;
+    case 9:
+        $anexoCentro = 42;
+        $ipCentro = 44;
+
+        break;
+    case 10:
+        $anexoCentro = 43;
+        $ipCentro = 14;
+
+        break;
+    case 11:
+        $anexoCentro = 10;
+        $ipCentro = 12;
+
+
+        break;
+    case 41:
+        $anexoCentro = 41;
+        $ipCentro = 13;
+
+        break;
+}
 ?>
 <html>
     <head>
@@ -47,24 +114,24 @@ if ($p == 0) {
         <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker-bs3.css">
         <!-- bootstrap wysihtml5 - text editor -->
         <link rel="stylesheet" href="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-         <link rel="stylesheet" href="../../css/fakeLoader.css">
+        <link rel="stylesheet" href="../../css/fakeLoader.css">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-<script>
-                        $(document).ready(function () {
-                            $(".fakeloader").fakeLoader({
-                                timeToHide: 1000,
-                                bgColor: "#ffffff",
-                                zIndex: "10",
-                                spinner: "spinner1",
-                                imagePath: "../../imag/Preloader_3.gif"
-                            });
-                        });
-                    </script>
+        <script>
+            $(document).ready(function () {
+                $(".fakeloader").fakeLoader({
+                    timeToHide: 1000,
+                    bgColor: "#ffffff",
+                    zIndex: "10",
+                    spinner: "spinner1",
+                    imagePath: "../../imag/Preloader_3.gif"
+                });
+            });
+        </script>
 
 
 
@@ -208,10 +275,10 @@ if ($p == 0) {
 
 
                 <div id='contenido'>
-                                <div class="fakeloader">
+                    <div class="fakeloader">
 
-                    
-                </div>
+
+                    </div>
 
                     <div class="row" style="margin-top:10px">
                         <div class="col-md-12" style="width: 99%;">
@@ -242,7 +309,9 @@ if ($p == 0) {
                                                     echo "        <div class='form-group'>";
                                                     echo "            <div class='col-sm-10'>";
                                                     echo "                <label>Direccion IP</label>";
-                                                    echo "                <input type='text' class='form-control' name='txtIp' value='" . $ip . "'>";
+                                                    require '../../modelo/Data.php';
+                                                    $d = new Data();
+                                                    $d->comboIpF($ip);
                                                     echo "            </div>";
                                                     echo "            <div class='col-sm-10'>";
                                                     echo "                <label>Nombre Equipo</label>";
@@ -250,31 +319,17 @@ if ($p == 0) {
                                                     echo "            </div>";
                                                     echo "            <div class='col-sm-10'>";
                                                     echo "                <label>Box Equipo</label>";
-
                                                     require '../../modelo/Data.php';
                                                     $d = new Data();
-
                                                     $d->comboBoxF($box);
-
-
                                                     echo "            </div>";
                                                     echo "            <div class='col-sm-10'>";
                                                     echo "              <label>Sector Equipo</label>";
-
-
-
                                                     $d->comboSectorF($sector);
-
-
                                                     echo "           </div>";
                                                     echo "         <div class='col-sm-10'>";
                                                     echo "             <label>Centro Asistencial</label>";
-
-
-
                                                     $d->comboCentroFA($ce);
-
-
                                                     echo "         </div>";
                                                     echo "         <div class='col-sm-10'>";
                                                     echo "       <label>Anexo Equipo</label>";
@@ -286,12 +341,9 @@ if ($p == 0) {
                                                     echo "   </div>";
                                                     echo "   <div class='col-sm-10'>";
                                                     echo "       <label>Funcionario</label>";
-
                                                     $d->comboFuncionarioF($funcionario);
-
                                                     echo "   </div>";
                                                     echo " </div>";
-
                                                     echo "     </div><!-- /.box-body -->";
                                                     echo "     <div class='box-footer'>";
                                                     echo "        <button type='submit' class='btn btn-info pull-right'>Guardar</button>";
@@ -303,7 +355,9 @@ if ($p == 0) {
                                                     echo "        <div class='form-group'>";
                                                     echo "            <div class='col-sm-10'>";
                                                     echo "                <label>Direccion IP</label>";
-                                                    echo "                <input type='text' class='form-control' name='txtIp' placeholder='192.168.1.1'>";
+                                                    require '../../modelo/Data.php';
+                                                    $d = new Data();
+                                                    $d->comboIp();
                                                     echo "            </div>";
                                                     echo "            <div class='col-sm-10'>";
                                                     echo "                <label>Nombre Equipo</label>";
@@ -311,31 +365,15 @@ if ($p == 0) {
                                                     echo "            </div>";
                                                     echo "            <div class='col-sm-10'>";
                                                     echo "                <label>Box Equipo</label>";
-
-                                                    require '../../modelo/Data.php';
-                                                    $d = new Data();
-
                                                     $d->comboBox();
-
-
                                                     echo "            </div>";
                                                     echo "            <div class='col-sm-10'>";
                                                     echo "              <label>Sector Equipo</label>";
-
-
-
                                                     $d->comboSector();
-
-
                                                     echo "           </div>";
                                                     echo "         <div class='col-sm-10'>";
                                                     echo "             <label>Centro Asistencial</label>";
-
-
-
                                                     $d->comboCentro();
-
-
                                                     echo "         </div>";
                                                     echo "         <div class='col-sm-10'>";
                                                     echo "       <label>Anexo Equipo</label>";
@@ -347,12 +385,9 @@ if ($p == 0) {
                                                     echo "   </div>";
                                                     echo "   <div class='col-sm-10'>";
                                                     echo "       <label>Funcionario</label>";
-
                                                     $d->comboFuncionario();
-
                                                     echo "   </div>";
                                                     echo " </div>";
-
                                                     echo "     </div><!-- /.box-body -->";
                                                     echo "     <div class='box-footer'>";
                                                     echo "        <button type='submit' class='btn btn-info pull-right'>Guardar</button>";
@@ -363,9 +398,7 @@ if ($p == 0) {
 
                                             case 1:
 
-                                                switch ($ce) {
-                                                    case 0:
-                                                        if (isset($_GET['ip'])) {
+                                                if (isset($_GET['ip'])) {
                                                     $viajando = 1;
                                                     $ip = $_GET['ip'];
                                                     $nombre = $_GET['nombre'];
@@ -380,7 +413,9 @@ if ($p == 0) {
                                                     echo "        <div class='form-group'>";
                                                     echo "            <div class='col-sm-10'>";
                                                     echo "                <label>Direccion IP</label>";
-                                                    echo "                <input type='text' class='form-control' name='txtIp' value='" . $ip . "'>";
+                                                    require '../../modelo/Data.php';
+                                                    $d = new Data();
+                                                    echo "                <input type='text' class='form-control' name='txtIp' value='" . $ip . "' readonly>";
                                                     echo "            </div>";
                                                     echo "            <div class='col-sm-10'>";
                                                     echo "                <label>Nombre Equipo</label>";
@@ -388,35 +423,19 @@ if ($p == 0) {
                                                     echo "            </div>";
                                                     echo "            <div class='col-sm-10'>";
                                                     echo "                <label>Box Equipo</label>";
-
-                                                    require '../../modelo/Data.php';
-                                                    $d = new Data();
-
                                                     $d->comboBoxF($box);
-
-
                                                     echo "            </div>";
                                                     echo "            <div class='col-sm-10'>";
                                                     echo "              <label>Sector Equipo</label>";
-
-
-
                                                     $d->comboSectorF($sector);
-
-
                                                     echo "           </div>";
                                                     echo "         <div class='col-sm-10'>";
                                                     echo "             <label>Centro Asistencial</label>";
-
-
-
                                                     $d->comboCentroFA($ce);
-
-
                                                     echo "         </div>";
                                                     echo "         <div class='col-sm-10'>";
                                                     echo "       <label>Anexo Equipo</label>";
-                                                    $d->comboAnexoTodosF($anexo);
+                                                    $d->comboAnexoTodosFF($anexo,$anexoCentro);
                                                     echo "   </div>";
                                                     echo "   <div class='col-sm-10'>";
                                                     echo "       <label>Numero Externo</label>";
@@ -424,12 +443,9 @@ if ($p == 0) {
                                                     echo "   </div>";
                                                     echo "   <div class='col-sm-10'>";
                                                     echo "       <label>Funcionario</label>";
-
                                                     $d->comboFuncionarioF($funcionario);
-
                                                     echo "   </div>";
                                                     echo " </div>";
-
                                                     echo "     </div><!-- /.box-body -->";
                                                     echo "     <div class='box-footer'>";
                                                     echo "        <button type='submit' class='btn btn-info pull-right'>Guardar</button>";
@@ -441,7 +457,9 @@ if ($p == 0) {
                                                     echo "        <div class='form-group'>";
                                                     echo "            <div class='col-sm-10'>";
                                                     echo "                <label>Direccion IP</label>";
-                                                    echo "                <input type='text' class='form-control' name='txtIp' placeholder='192.168.1.1'>";
+                                                    require '../../modelo/Data.php';
+                                                    $d = new Data();
+                                                    $d->comboIpCentro($ipCentro);
                                                     echo "            </div>";
                                                     echo "            <div class='col-sm-10'>";
                                                     echo "                <label>Nombre Equipo</label>";
@@ -449,35 +467,19 @@ if ($p == 0) {
                                                     echo "            </div>";
                                                     echo "            <div class='col-sm-10'>";
                                                     echo "                <label>Box Equipo</label>";
-
-                                                    require '../../modelo/Data.php';
-                                                    $d = new Data();
-
                                                     $d->comboBox();
-
-
                                                     echo "            </div>";
                                                     echo "            <div class='col-sm-10'>";
                                                     echo "              <label>Sector Equipo</label>";
-
-
-
                                                     $d->comboSector();
-
-
                                                     echo "           </div>";
                                                     echo "         <div class='col-sm-10'>";
                                                     echo "             <label>Centro Asistencial</label>";
-
-
-
-                                                    $d->comboCentro();
-
-
+                                                    $d->comboCentroFiltrado($ce);
                                                     echo "         </div>";
                                                     echo "         <div class='col-sm-10'>";
                                                     echo "       <label>Anexo Equipo</label>";
-                                                    $d->comboAnexoTodos();
+                                                    $d->comboAnexo($anexoCentro);
                                                     echo "   </div>";
                                                     echo "   <div class='col-sm-10'>";
                                                     echo "       <label>Numero Externo</label>";
@@ -485,160 +487,15 @@ if ($p == 0) {
                                                     echo "   </div>";
                                                     echo "   <div class='col-sm-10'>";
                                                     echo "       <label>Funcionario</label>";
-
                                                     $d->comboFuncionario();
-
                                                     echo "   </div>";
                                                     echo " </div>";
-
                                                     echo "     </div><!-- /.box-body -->";
                                                     echo "     <div class='box-footer'>";
                                                     echo "        <button type='submit' class='btn btn-info pull-right'>Guardar</button>";
                                                     echo "     </div>";
                                                     echo " </form>";
                                                 }
-                                                        
-
-
-                                                        break;
-
-                                                    default:
-                                                        if (isset($_GET['ip'])) {
-                                                    $viajando = 1;
-                                                    $ip = $_GET['ip'];
-                                                    $nombre = $_GET['nombre'];
-                                                    $box = $_GET['box'];
-                                                    $sector = $_GET['sector'];
-                                                    $centro = $_GET['centro'];
-                                                    $anexo = $_GET['anexo'];
-                                                    $numero = $_GET['numero'];
-                                                    $funcionario = $_GET['funcionario'];
-                                                    echo "<form class='form-horizontal' method='POST' action='../../controlador/ControEquipoUP.php?f=" . $funcionario . "'>";
-                                                    echo "    <div class='box-body'>";
-                                                    echo "        <div class='form-group'>";
-                                                    echo "            <div class='col-sm-10'>";
-                                                    echo "                <label>Direccion IP</label>";
-                                                    echo "                <input type='text' class='form-control' name='txtIp' value='" . $ip . "'>";
-                                                    echo "            </div>";
-                                                    echo "            <div class='col-sm-10'>";
-                                                    echo "                <label>Nombre Equipo</label>";
-                                                    echo "                <input type='text' class='form-control' name='txtNombre' value='" . $nombre . "'>";
-                                                    echo "            </div>";
-                                                    echo "            <div class='col-sm-10'>";
-                                                    echo "                <label>Box Equipo</label>";
-
-                                                    require '../../modelo/Data.php';
-                                                    $d = new Data();
-
-                                                    $d->comboBoxF($box);
-
-
-                                                    echo "            </div>";
-                                                    echo "            <div class='col-sm-10'>";
-                                                    echo "              <label>Sector Equipo</label>";
-
-
-
-                                                    $d->comboSectorF($sector);
-
-
-                                                    echo "           </div>";
-                                                    echo "         <div class='col-sm-10'>";
-                                                    echo "             <label>Centro Asistencial</label>";
-
-
-
-                                                    $d->comboCentroFA($ce);
-
-
-                                                    echo "         </div>";
-                                                    echo "         <div class='col-sm-10'>";
-                                                    echo "       <label>Anexo Equipo</label>";
-                                                    $d->comboAnexoTodosFF($anexo, $ce);
-                                                    echo "   </div>";
-                                                    echo "   <div class='col-sm-10'>";
-                                                    echo "       <label>Numero Externo</label>";
-                                                    echo "       <input type='number' class='form-control' name='txtnum' value='" . $numero . "'>";
-                                                    echo "   </div>";
-                                                    echo "   <div class='col-sm-10'>";
-                                                    echo "       <label>Funcionario</label>";
-
-                                                    $d->comboFuncionarioF($funcionario);
-
-                                                    echo "   </div>";
-                                                    echo " </div>";
-
-                                                    echo "     </div><!-- /.box-body -->";
-                                                    echo "     <div class='box-footer'>";
-                                                    echo "        <button type='submit' class='btn btn-info pull-right'>Guardar</button>";
-                                                    echo "     </div>";
-                                                    echo " </form>";
-                                                } else {
-                                                    echo "<form class='form-horizontal' method='POST' action='../../controlador/ControEquipo.php'>";
-                                                    echo "    <div class='box-body'>";
-                                                    echo "        <div class='form-group'>";
-                                                    echo "            <div class='col-sm-10'>";
-                                                    echo "                <label>Direccion IP</label>";
-                                                    echo "                <input type='text' class='form-control' name='txtIp' placeholder='192.168.1.1'>";
-                                                    echo "            </div>";
-                                                    echo "            <div class='col-sm-10'>";
-                                                    echo "                <label>Nombre Equipo</label>";
-                                                    echo "                <input type='text' class='form-control' name='txtNombre' placeholder='Nombre-Equipo'>";
-                                                    echo "            </div>";
-                                                    echo "            <div class='col-sm-10'>";
-                                                    echo "                <label>Box Equipo</label>";
-
-                                                    require '../../modelo/Data.php';
-                                                    $d = new Data();
-
-                                                    $d->comboBox();
-
-
-                                                    echo "            </div>";
-                                                    echo "            <div class='col-sm-10'>";
-                                                    echo "              <label>Sector Equipo</label>";
-
-
-
-                                                    $d->comboSector();
-
-
-                                                    echo "           </div>";
-                                                    echo "         <div class='col-sm-10'>";
-                                                    echo "             <label>Centro Asistencial</label>";
-
-
-
-                                                    $d->comboCentroF($ce);
-
-
-                                                    echo "         </div>";
-                                                    echo "         <div class='col-sm-10'>";
-                                                    echo "       <label>Anexo Equipo</label>";
-                                                    $d->comboAnexo($ce);
-                                                    echo "   </div>";
-                                                    echo "   <div class='col-sm-10'>";
-                                                    echo "       <label>Numero Externo</label>";
-                                                    echo "       <input type='number' class='form-control' name='txtnum' placeholder='Numero Externo'>";
-                                                    echo "   </div>";
-                                                    echo "   <div class='col-sm-10'>";
-                                                    echo "       <label>Funcionario</label>";
-
-                                                    $d->comboFuncionario();
-
-                                                    echo "   </div>";
-                                                    echo " </div>";
-
-                                                    echo "     </div><!-- /.box-body -->";
-                                                    echo "     <div class='box-footer'>";
-                                                    echo "        <button type='submit' class='btn btn-info pull-right'>Guardar</button>";
-                                                    echo "     </div>";
-                                                    echo " </form>";
-                                                }
-                                                }
-
-
-                                                break;
                                         }
                                         ?>
 
@@ -672,85 +529,86 @@ if ($p == 0) {
                     </div>
                 </div>
 
-
-                <!-- /.content -->
-            </div><!-- /.content-wrapper -->
-
-
+            </div>
+            <!-- /.content -->
+        </div><!-- /.content-wrapper -->
 
 
-            <footer class="main-footer">
-                <div class="pull-right hidden-xs">
-                    <b>Version</b> 3.1
-                </div>
-                <strong>Copyright &copy; 2016-2017 <a href="#">Giovanni Cáceres R.</a></strong> 
-            </footer>
-
-            <!-- Control Sidebar -->
-            <aside class="control-sidebar control-sidebar-light">
-                <!-- Create the tabs -->
-                <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
 
 
-                </ul>
-                <!-- Tab panes -->
-                <div class="tab-content">
-                    <!-- Home tab content -->
-                    <div class="tab-pane" id="control-sidebar-home-tab">
-                        <!-- /.control-sidebar-menu -->
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 3.1
+            </div>
+            <strong>Copyright &copy; 2016-2017 <a href="#">Giovanni Cáceres R.</a></strong> 
+        </footer>
 
-                    </div><!-- /.tab-pane -->
-                    <!-- Stats tab content -->
-
-
-                </div>
-            </aside><!-- /.control-sidebar -->
-            <!-- Add the sidebar's background. This div must be placed
-                 immediately after the control sidebar -->
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-light">
+            <!-- Create the tabs -->
+            <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
 
 
-            <!-- jQuery 2.1.4 -->
-            <script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
-            <!-- jQuery UI 1.11.4 -->
-            <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-            <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-            <script>
-                $.widget.bridge('uibutton', $.ui.button);
-            </script>
-            <!-- Bootstrap 3.3.5 -->
-            <script src="../../bootstrap/js/bootstrap.min.js"></script>
-            <!-- Morris.js charts -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-            <script src="../../plugins/morris/morris.min.js"></script>
-            <!-- Sparkline -->
-            <script src="../../plugins/sparkline/jquery.sparkline.min.js"></script>
-            <!-- jvectormap -->
-            <script src="../../plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-            <script src="../../plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-            <!-- jQuery Knob Chart -->
-            <script src="../../plugins/knob/jquery.knob.js"></script>
-            <!-- daterangepicker -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <!-- Home tab content -->
+                <div class="tab-pane" id="control-sidebar-home-tab">
+                    <!-- /.control-sidebar-menu -->
 
-            <script src="http://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+                </div><!-- /.tab-pane -->
+                <!-- Stats tab content -->
 
-            <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
-            <script src="../../plugins/datatables/dataTables.bootstrap.min.js"></script>
-            <script src="../../plugins/daterangepicker/daterangepicker.js"></script>
-            <!-- datepicker -->
-            <script src="../../plugins/datepicker/bootstrap-datepicker.js"></script>
-            <!-- Bootstrap WYSIHTML5 -->
-            <script src="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-            <!-- Slimscroll -->
-            <script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
-            <!-- FastClick -->
-            <script src="../../plugins/fastclick/fastclick.min.js"></script>
-            <!-- AdminLTE App -->
-            <script src="../../dist/js/app.min.js"></script>
-            <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-            <script src="../../dist/js/pages/dashboard.js"></script>
-            <!-- AdminLTE for demo purposes -->
-            <script src="../../dist/js/demo.js"></script>
-                <script src="../../js/fakeLoader.min.js"></script>
+
+            </div>
+        </aside><!-- /.control-sidebar -->
+        <!-- Add the sidebar's background. This div must be placed
+             immediately after the control sidebar -->
+
+
+        <!-- jQuery 2.1.4 -->
+        <script src="../../js/ajax.js"></script>
+        <script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
+        <!-- jQuery UI 1.11.4 -->
+        <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+        <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+        <script>
+            $.widget.bridge('uibutton', $.ui.button);
+        </script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../../bootstrap/js/bootstrap.min.js"></script>
+        <!-- Morris.js charts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <script src="../../plugins/morris/morris.min.js"></script>
+        <!-- Sparkline -->
+        <script src="../../plugins/sparkline/jquery.sparkline.min.js"></script>
+        <!-- jvectormap -->
+        <script src="../../plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+        <script src="../../plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+        <!-- jQuery Knob Chart -->
+        <script src="../../plugins/knob/jquery.knob.js"></script>
+        <!-- daterangepicker -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
+
+        <script src="http://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+
+        <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="../../plugins/datatables/dataTables.bootstrap.min.js"></script>
+        <script src="../../plugins/daterangepicker/daterangepicker.js"></script>
+        <!-- datepicker -->
+        <script src="../../plugins/datepicker/bootstrap-datepicker.js"></script>
+        <!-- Bootstrap WYSIHTML5 -->
+        <script src="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+        <!-- Slimscroll -->
+        <script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../../plugins/fastclick/fastclick.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../../dist/js/app.min.js"></script>
+        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+        <script src="../../dist/js/pages/dashboard.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="../../dist/js/demo.js"></script>
+        <script src="../../js/fakeLoader.min.js"></script>
     </body>
 </html>

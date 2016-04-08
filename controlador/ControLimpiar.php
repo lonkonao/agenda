@@ -1,6 +1,6 @@
 <?php
 require_once '../modelo/Data.php';
-$ip = $_POST['txtIp'];
+$ip = $_POST['id'];
 
 $d= new Data();
 
